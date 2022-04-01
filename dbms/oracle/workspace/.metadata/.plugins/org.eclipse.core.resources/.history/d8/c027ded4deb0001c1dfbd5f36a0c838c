@@ -1,0 +1,10 @@
+/*
+ * 조합키(복합키)
+ * 	두 개 이상의 컬럼을 하나의 PK로 설정
+ * 	CONSTRAINT [제약조건 이름] PRIMARY KEY(컬럼명1, 컬럼명2, ...)
+ * 	CONSTRAINT [제약조건 이름] FOREIGN KEY(컬럼명1, 컬럼명2, ...) REFERENCES [부모 테이블명](부모컬럼명1, 부모컬럼명2,...)
+ * 
+ * */
+
+SELECT * FROM TBL_FLOWER;
+SELECT * FROM TBL_POT;

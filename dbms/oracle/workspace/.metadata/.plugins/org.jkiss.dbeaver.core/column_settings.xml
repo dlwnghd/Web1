@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item id="NodeList/DBNBookmarkFolder/DBNDiagramFolder/DBNResource/DBNProjectDatabases">
+		<column name="이름" visible="true" order="0" width="112"/>
+		<column name="경로" visible="true" order="1" width="151"/>
+		<column name="크기" visible="true" order="2" width="100"/>
+		<column name="최종 수정" visible="true" order="3" width="176"/>
+	</item>
+	<item id="NodeList/OracleTableColumn">
+		<column name="컬럼명" visible="true" order="0" width="162"/>
+		<column name="#" visible="true" order="1" width="100"/>
+		<column name="Type" visible="true" order="2" width="125"/>
+		<column name="Type Mod" visible="true" order="3" width="100"/>
+		<column name="Not Null" visible="true" order="4" width="100"/>
+		<column name="디폴트" visible="true" order="5" width="100"/>
+		<column name="Comment" visible="true" order="6" width="100"/>
+	</item>
+	<item id="NodeList/OracleTableConstraint">
+		<column name="이름" visible="true" order="0" width="100"/>
+		<column name="소유자" visible="true" order="1" width="100"/>
+		<column name="Type" visible="true" order="2" width="100"/>
+		<column name="Condition" visible="true" order="3" width="100"/>
+		<column name="Status" visible="true" order="4" width="100"/>
+	</item>
+	<item id="NodeList/OracleTableForeignKey">
+		<column name="이름" visible="true" order="0" width="100"/>
+		<column name="소유자" visible="true" order="1" width="100"/>
+		<column name="Ref Table" visible="true" order="2" width="100"/>
+		<column name="Type" visible="true" order="3" width="100"/>
+		<column name="Ref Object" visible="true" order="4" width="100"/>
+		<column name="On Delete" visible="true" order="5" width="100"/>
+		<column name="Status" visible="true" order="6" width="100"/>
+	</item>
+	<item id="NodeList/OracleTableTrigger">
+		<column name="Name" visible="true" order="0" width="100"/>
+		<column name="Table" visible="true" order="1" width="100"/>
+		<column name="Object Type" visible="true" order="2" width="100"/>
+		<column name="Trigger Type" visible="true" order="3" width="100"/>
+		<column name="Event" visible="true" order="4" width="100"/>
+		<column name="Column" visible="true" order="5" width="100"/>
+		<column name="Status" visible="true" order="6" width="100"/>
+		<column name="Action Type" visible="true" order="7" width="100"/>
+	</item>
+</items>

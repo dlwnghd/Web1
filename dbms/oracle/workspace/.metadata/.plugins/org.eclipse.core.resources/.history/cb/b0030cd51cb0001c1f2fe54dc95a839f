@@ -1,0 +1,100 @@
+/*   FLOWER
+   -------------------------------------------
+   FLOWER_NAME : VARCHAR2(1000) : PRIMARY KEY
+   FLOWER_COLOR : VARCHAR2(1000) : PRIMARY KEY
+   -------------------------------------------
+   FLOWER_PRICE : NUMBER
+
+
+   POT
+   -------------------------------------------
+   POT_NUMBER : NUMBER : PRIMARY KEY
+   -------------------------------------------
+   POT_COLOR : VARCHAR2(1000)
+   POT_SHAPE : VARCHAR2(1000)
+   FLOWER_NAME : VARCHAR2(1000) : FOREIGN KEY
+   FLOWER_COLOR : VARCHAR2(1000) : FOREIGN KEY*/
+
+CREATE TABLE FLOWER(
+   FLOWER_NAME VARCHAR2(1000),
+   FLOWER_COLOR VARCHAR2(1000),
+   FLOWER_PRICE NUMBER,
+   CONSTRAINT PK_FLOWER PRIMARY KEY(FLOWER_NAME, FLOWER_COLOR) /*조합키일 경우 CONSTRAINT 명령어를 통해 PK를 설정한다.*/
+);
+
+/*테이블명 변경*/
+ALTER TABLE FLOWER RENAME TO TBL_FLOWER;
+
+CREATE TABLE TBL_POT(
+   POT_NUMBER NUMBER PRIMARY KEY,
+   POT_COLOR VARCHAR2(1000),
+   POT_SHAPE VARCHAR2(1000),
+   FLOWER_NAME VARCHAR2(1000),
+   FLOWER_COLOR VARCHAR2(1000),
+   CONSTRAINT FK_POT FOREIGN KEY(FLOWER_NAME, FLOWER_COLOR) REFERENCES TBL_FLOWER(FLOWER_NAME, FLOWER_COLOR)
+);
+
+/*
+ * 1. 요구사항 분석
+ *       - 반려동물
+ *          종류, 이름, 나이, 병명
+ * 
+ *       - 주인
+ *          이름, 나이, 주소, 핸드폰 번호
+ * 
+ * 2. 개념적 설계
+ *      PET     OWNER
+ * 	------------------------------
+ * 		종류		이름
+ * 		이름		나이
+ * 		나이		주소
+ * 		병명		핸드폰 번호
+ * 
+ * 3. 논리적 설계
+ *      PET     OWNER
+ * 	------------------------------
+ * 		종류P		주인이름P
+ * 		펫이름P	나이
+ * 		나이		주소
+ * 		병명P		핸드폰 번호P
+ * 				종류F
+ * 				펫이름F
+ * 				병명F
+ * 
+ * 4. 물리적 설계
+ * /*   PET
+   -------------------------------------------
+   PET_SPICES : VARCHAR2(1000) : PRIMARY KEY
+   PET_NAME : VARCHAR2(1000) : PRIMARY KEY
+   DISEASE_NAME : VARCHAR2(1000) : PRIMARY KEY
+   -------------------------------------------
+   PET_AGE : NUMBER
+
+
+   OWNER
+   -------------------------------------------
+   OWNER_NAME : VARCHAR2(1000) : PRIMARY KEY
+   OWNER_PHONENUMBER : VARCHAR2(1000) : PRIMARY KEY
+   -------------------------------------------
+   OWNER_AGE : NUMBER : PRIMARY KEY
+   ADDRESS : VARCHAR2(1000)
+   PET_SPICES : VARCHAR2(1000) : FOREIGN KEY
+   PET_NAME : VARCHAR2(1000) : FOREIGN KEY
+   DISEASE_NAME : VARCHAR2(1000) : FOREIGN KEY 
+   */
+ * 5. 구현
+ * */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
