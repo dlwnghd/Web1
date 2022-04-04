@@ -131,9 +131,9 @@ FROM PLAYER;
 
 /*
  * 집계 함수
- *       여러 개의 값을 하나의 값으로 집계하여 나타낸다.
- *       ※ NULL은 포함하지 않는다.
- *       ※ WHERE 절에서는 사용할 수 없다.
+ * 		여러 개의 값을 하나의 값으로 집계하여 나타낸다.
+ * 		※ NULL은 포함하지 않는다.
+ * 		※ WHERE 절에서는 사용할 수 없다.
  * */
 /*
  * 평균 : AVG()
@@ -150,8 +150,8 @@ SELECT COUNT(NVL(HEIGHT, 0)) FROM PLAYER;
 
 /*
  * 정렬 (ORDER BY) 
- *       ASC : 오름 차순(DEFAULT)
- *       DESC : 내림 차순
+ * 		ASC : 오름 차순(DEFAULT)
+ * 		DESC : 내림 차순
  * */
 
 SELECT * FROM PLAYER
@@ -211,6 +211,7 @@ ORDER BY 2;
 /*
  * PLAYER 테이블에서 전체 평균 키와 포지션별 평균 키 구하기
  * */
+
 
 
 
