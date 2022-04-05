@@ -1,13 +1,13 @@
 {
 	"folders": {},
 	"connections": {
-		"oracle_thin-17ff3e653f8-106f8fc688a1fccb": {
+		"oracle_thin-17ff88053de-37f31c94a764f508": {
 			"provider": "oracle",
 			"driver": "oracle_thin",
 			"name": "localhost",
 			"save-password": true,
 			"read-only": false,
-			"virtual-model-id": "oracle_thin-17fe497d962-4fbbe501d80a5be8",
+			"virtual-model-id": "oracle_thin-17ff3e653f8-106f8fc688a1fccb",
 			"configuration": {
 				"host": "localhost",
 				"port": "1521",

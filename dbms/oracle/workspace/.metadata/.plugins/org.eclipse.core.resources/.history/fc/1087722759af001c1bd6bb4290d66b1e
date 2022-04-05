@@ -1,7 +1,0 @@
---한줄 주석
-/*범위 주석*/
-
-CREATE TABLE "USER"(
-	NAME VARCHAR2(500),
-	AGE NUMBER
-);
