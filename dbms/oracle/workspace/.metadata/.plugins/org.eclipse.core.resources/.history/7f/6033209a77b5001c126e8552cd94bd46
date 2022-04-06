@@ -68,11 +68,9 @@ AND HIRE_DATE BETWEEN TO_DATE('2003-01-01', 'YYYY-MM-DD') AND TO_DATE('2005-12-2
 --'2005-12-31'을 날짜형 데이터로 형 변환한 값 사이의 값을 가진 칼럼과 연결
 
 /*해당 월 이전까지 포함*/
-SELECT * FROM DEPARTMENTS D JOIN EMPLOYEES E	--DEPARTMENTS(D)와 EMPLOYEES(E) 테이블을 연결하여 전체 정보 출력
-ON D.DEPARTMENT_ID = E.DEPARTMENT_ID	--D의 DEPARTMENT_ID와 E의 DEPARTMENT_ID가 일치하는 칼럼과 연결
+SELECT * FROM DEPARTMENTS D JOIN EMPLOYEES E
+ON D.DEPARTMENT_ID = E.DEPARTMENT_ID 
 AND HIRE_DATE BETWEEN TO_DATE('2003-01', 'YYYY-MM') AND TO_DATE('2005-12', 'YYYY-MM');
---그리고 HIRE_DATE가 '2003-01'을 날짜형 데이터로 형 변환한 값과
---'2005-12'을 날짜형 데이터로 형 변환한 값 사이의 값을 가진 칼럼과 연결
 
 /*JOB_TITLE 중 'Manager'라는 문자열이 포함된 직업들의 평균 연봉을 JOB_TITLE별로 출력*/
 SELECT * FROM JOBS;

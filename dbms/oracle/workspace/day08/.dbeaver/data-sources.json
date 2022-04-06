@@ -1,13 +1,13 @@
 {
 	"folders": {},
 	"connections": {
-		"oracle_thin-17ff88053de-37f31c94a764f508": {
+		"oracle_thin-17ffe5a9c7d-36002bb88684d963": {
 			"provider": "oracle",
 			"driver": "oracle_thin",
 			"name": "localhost",
 			"save-password": true,
 			"read-only": false,
-			"virtual-model-id": "oracle_thin-17ff3e653f8-106f8fc688a1fccb",
+			"virtual-model-id": "oracle_thin-17ff88053de-37f31c94a764f508",
 			"configuration": {
 				"host": "localhost",
 				"port": "1521",
@@ -29,7 +29,8 @@
 					"@dbeaver-connection-type@": "BASIC",
 					"@dbeaver-sid-service@": "SERVICE"
 				},
-				"auth-model": "oracle_native"
+				"auth-model": "oracle_native",
+				"handlers": {}
 			}
 		}
 	},

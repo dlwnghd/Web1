@@ -41,4 +41,7 @@
 		<column name="Status" visible="true" order="6" width="100"/>
 		<column name="Action Type" visible="true" order="7" width="100"/>
 	</item>
+	<item id="SchemaSelector">
+		<column name="Name" visible="true" order="0" width="160"/>
+	</item>
 </items>
