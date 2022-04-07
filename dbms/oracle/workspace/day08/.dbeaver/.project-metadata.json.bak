@@ -1,1 +1,1 @@
-{"resources":{"Scripts/day08.sql":{"sql-editor-data-source-id":"oracle_thin-17ffe5a9c7d-36002bb88684d963"}}}
+{"resources":{"Scripts/day08.sql":{"default-schema":"HR","sql-editor-data-source-id":"oracle_thin-17ffe5a9c7d-36002bb88684d963","default-datasource":"oracle_thin-17ffe5a9c7d-36002bb88684d963"}}}

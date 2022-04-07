@@ -1,0 +1,22 @@
+/*브론즈*/
+/*PLAYER 테이블에서 키가 NULL인 선수들은 키를 170으로 변경하여 평균 구하기(NULL 포함)*/
+SELECT AVG(NVL(HEIGHT,170)) AS "평균 키" FROM PLAYER;
+
+/*실버*/
+/*PLAYER 테이블에서 팀 별 최대 몸무게*/
+SELECT TEAM_ID, MAX(WEIGHT) || 'kg' AS "최대 몸무게" FROM PLAYER
+GROUP BY TEAM_ID
+ORDER BY 1;
+
+/*골드*/
+/*AVG 함수를 쓰지 않고 PLAYER 테이블에서 선수들의 평균 키 구하기(NULL 미포함)*/
+SELECT AVG(NVL(HEIGHT,0)) FROM PLAYER;
+
+/*플래티넘*/
+/*DEPT 테이블의 LOC별 평균 급여를 반올림한 값과 각 LOC별 SAL 총 합을 조회*/
+
+/*다이아*/
+/*PLAYER 테이블에서 팀별 최대 몸무게인 선수 검색*/
+
+/*마스터*/
+/*EMP 테이블에서 HIREDATE가 FORD의 입사년도와 같은 사원 전체 정보 조회*/

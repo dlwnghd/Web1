@@ -7,7 +7,6 @@
 			"name": "localhost",
 			"save-password": true,
 			"read-only": false,
-			"virtual-model-id": "oracle_thin-17ff88053de-37f31c94a764f508",
 			"configuration": {
 				"host": "localhost",
 				"port": "1521",
@@ -29,7 +28,8 @@
 					"@dbeaver-connection-type@": "BASIC",
 					"@dbeaver-sid-service@": "SERVICE"
 				},
-				"auth-model": "oracle_native"
+				"auth-model": "oracle_native",
+				"handlers": {}
 			}
 		}
 	},

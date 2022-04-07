@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"exceptionTest","c":"MyMath","l":"div(int, int)","u":"div(int,int)"},{"p":"exceptionTest","c":"MyMath","l":"MyMath()","u":"%3Cinit%3E()"}];updateSearchResults();
