@@ -1,0 +1,23 @@
+JAR 파일로 배포하기
+   배포할 클래스 또는 패키지 우클릭
+   > Export > JAVA/JAR file 선택 > Next
+   > destination을 원하는 경로로 선택
+   > Export Java source files... 체크
+   > Finish
+
+JAR 파일을 프로젝트에 추가하기
+   배포된 JAR파일을 다운 받기
+   > 프로젝트 우클릭 > Build Path > Configure Build Path
+   > Libraries 탭 클릭 > ClassPath(안되면 ModulePath) 클릭 > Add External JARs
+   > 저장된 경로의 .jar파일을 더블 클릭으로 추가 > Apply 클릭
+   > Orders and Exports 탭 클릭
+   > Select All 클릭 > Apply and Close
+
+
+
+API Key : NCSHUXHNNINOL8AT
+API Secret : IMDMEXAZSWQWO7OR993KMVDEXCOK0ZDV
+
+
+Object 클래스(최상위 부모 클래스)
+	

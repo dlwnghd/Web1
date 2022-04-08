@@ -4041,3 +4041,6 @@ java.sql.SQLSyntaxErrorException: ORA-00904: "HDS1234": invalid identifier
 	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:4855)
 	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.jkiss.dbeaver.model 2 0 2022-04-07 21:56:03.323
+!MESSAGE Some sessions are still open: [SESSION localhost [Metadata], SESSION localhost [Metadata], SESSION localhost [Main], SESSION localhost [Main]]
