@@ -1,0 +1,9 @@
+HTML 요소의 종류
+
+➡️display
+
+블록(block) 레벨 요소
+	
+인라인(inline) 레벨 요소
+
+인라인 블록(inline-block) 레벨 요소

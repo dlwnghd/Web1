@@ -1,0 +1,51 @@
+<!-- 
+   이미지 태그(싱글 태그)
+   <img>
+   
+   닫는 태그가 없는 싱글 태그이다.
+   <img src="파일의 경로 혹은 url" alt="이미지에 문제 발생 시 대체할 문구">
+
+   경로
+   - 절대경로 : 어느 위치에 있어도 찾아갈 수 있는 경로
+   - 상대경로 : 현재 위치에 따라 변경되는 경로
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 태그</title>
+</head>
+<body>
+   <img src="img1/icon1.png">
+   <img src="../img2/icon2.png" width="64px">
+   <img src="../icon3.png">
+   <img src="./icon4.png">
+   <img src="icon4.png">
+   <!-- 크롬 브라우저에서는 절대 경로를 보안상 이유로 차단한다. -->
+   <img src="D:\web_1900_ljh\html\resource\images\icon5.png" alt="이미지 없음">
+   <!-- 절대 경로를 다른 지정한 경로로 우회해주면 절대 경로도 사용할 수 있게 된다. -->
+   <img src="/file/icon5.png">
+   <img src="https://cdn3.iconfinder.com/data/icons/spring-2-1/30/Sunflower-128.png">
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
