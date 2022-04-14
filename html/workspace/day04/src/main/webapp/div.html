@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>div</title>
+</head>
+<body>
+   <div style="width: 100%">
+      <div style="display:inline-block; background: red; width: 50%; text-align: center;">DIV1</div><div style="display:inline-block; background: green; width: 50%; text-align: center;">DIV2</div>
+   </div>
+   <!--
+      블록 요소를 한 줄로 정렬하고 싶을 때에는 float 속성을 사용한다.
+      left는 왼쪽으로 배치되고, right는 오른쪽으로 배치된다.
+      각  블록 요소의 width를 조정하여 정렬하는 것을 권장한다.
+   -->
+   <div style="background: orange; width: 33%; text-align: center; float: left; margin-right: 0.5%;">DIV3</div>
+   <div style="background: skyblue; width: 33%; text-align: center; float: left; margin-right: 0.5%;">DIV4</div>
+   <div style="background: lightgreen; width: 33%; text-align: center; float: left">DIV5</div>
+   
+   <!--
+      1. 위에 있는 float 효과를 제거하기 위해서는 clear 속성을 사용한다.
+      2. float left를 제거하기 위해서는 clear left, float right는 clear right로 제거할 수 있다.
+      3. 굳이 좌우를 따지지 않고 싶다면 clear both를 주면 된다.
+   -->
+   
+   <!--
+      display 속성에 flex 값을 작성하면, 자식 블록 요소들이 일렬로 정렬된다.
+   -->
+   <div style="display: flex; clear: both; justify-content: space-between;">
+      <div style="background: lightgray; width: 20%;">DIV6</div>
+      <div style="background: pink; width: 20%;">DIV7</div>
+      <div style="background: lime; width: 20%;">DIV8</div>
+      <div style="background: maroon; width: 20%;">DIV9</div>
+   </div>
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

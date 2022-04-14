@@ -156,7 +156,7 @@
       <Context docBase="day02" path="/day02" reloadable="true" source="org.eclipse.jst.jee.server:day02"/>
       <Context docBase="day03" path="/day03" reloadable="true" source="org.eclipse.jst.jee.server:day03"/>
       <Context docBase="D:\Web_1900_ljh\html\resource\images" path="/file" reloadable="true"/>
-      </Host>
+      <Context docBase="day04" path="/day04" reloadable="true" source="org.eclipse.jst.jee.server:day04"/></Host>
     </Engine>
   </Service>
 </Server>

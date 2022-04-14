@@ -1,9 +1,13 @@
 HTML 요소의 종류
 
-➡️display
+➡️ display
 
 블록(block) 레벨 요소
-	
-인라인(inline) 레벨 요소
+ - p, h, ul, ol, div, form, ... 등
+ - 웹 페이지 상에 블록을 만드는 요소
+ - 코드 상에 한 줄로 이어 써도 화면 상에서는 앞 뒤 요소 사이에 새로운 줄을 만들어서 나타난다.
+ - <p>apple</p><p>banana</p>
+ - 영역이 정확히 구분되어 있기 때문에, width와 height 속성을 수정할 수 있다.
 
-인라인 블록(inline-block) 레벨 요소
+인라인(inline) 레벨 요소
+인라인 블록(inline-block) 레벨 요소ne-block) 레벨 요소
