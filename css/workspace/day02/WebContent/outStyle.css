@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+ol > li {
+	font-size: 30px;
+}
+
+#first {
+	color: red;
+}
+
+li#second {
+	color: gray;
+}
+
+ol li#third {
+	color: orange;
+}
+
+.ordered {
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

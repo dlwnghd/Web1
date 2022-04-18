@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>우선순위 실습</title>
+<link rel="stylesheet" href="cascadingCss.css">
+<style>
+	/* important 사용 방법
+		속성명 : 속성값 !important;
+	 */
+
+
+	/* 사과가 초록색으로 나오게 하기 */
+	.apple {
+		color: red;
+	}
+
+	div.apple {
+		color: green;
+	}
+	
+	/* 바나나가 노란색으로 나오게 하기 */
+	#banana {
+		color: black;
+	}
+	
+</style>
+</head>
+<body>
+	<!-- <p id="banana" class="apple" style="color: yellow;">바나나</p> -->
+	<p id="banana" class="apple" style="color: black">바나나</p>
+	<div class="apple">사과</div>
+</body>
+</html>
+
+
+
+
+
+
+
