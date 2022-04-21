@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>position</title>
+<!--
+	1. relative
+	2. absolute
+		부모중에 relative position을 가지고 있는 요소를 기준으로 위치를 변경시킨다.
+		만약 어떠한 부모도 relative가 없다면 body태그 기준으로 위치를 변경시킨다.
+		자식 요소에 absolute 값이 있다면, 부모태그를 포함한 다른 relative들의 영역도 사라진다.
+		이 때 전체 내용이 겹치게 하지 않기 위해서는 부모태그들의 height를 주어서 영역을 만들어주어야 한다.
+		만약 일부러 겹치게 해야 한다면, 	height를 없애는 게 아니라 relative 요소의 top 또는 bottom을 조정해준다.
+-->
+<style>
+	div#cookie, div#brownie, div#macaron, div#chocolate{
+		position: relative;
+		height: 25px;
+	}
+	
+	div span {
+		position: absolute;
+	}
+	
+	body div:first-child {
+		color: yellow;
+	}
+	
+	/* +연산은 해당 연산자 앞에 있는 선택자의 다음 태그 1개를 의미한다. */
+	
+	body div:first-child + div + div {
+		color: brown;
+	}
+	
+	/* ~연산은 해당 연산자 앞에 있는 선택자 다음 태그부터 마지막 다음 태그까지를 의미한다. */
+	/* ~보다 +가 우선순위가 더 높다. */
+	/* first-child, last-child, nth-child(n)보다 ~이 우선순위가 더 높다. */
+	body div:first-child ~ div {
+		color: black;
+	}
+	
+	body div:last-child {
+		z-index: 2;
+		color: blue;
+	}
+	
+	/* first-child, last-child가 nth-child(n)보다 우선순위가 높다. */
+	body div:nth-child(2) {
+		z-index: 3;
+		color: green;
+	}
+	
+	/* 
+		z-index : 겹쳐있을 때 z축 수치를 조정할 수 있다.
+		0이 default이며, 겹쳐질 때에는 코드 작성 순서를 기준으로 가장 마지막인 태그가 가장 앞에 위치한다.
+		이를 변경하고자 할 때에는 z-index의 숫자를 키워줌으로써 앞쪽에 위치할 수 있게 한다.
+		만약 뒷쪽에 위치하고자 한다면 z-index의 숫자를 줄여준다.
+	
+	 */
+	
+	div#cookie {
+		background: brown;
+		z-index: 1;
+	}
+	
+	div#cookie span {
+		right: 0;
+	}
+	
+	div#brownie {
+		background: orange;
+		top: -50px;
+		z-index: 1;
+	}
+	
+	div#brownie span {
+		right: 30px;
+	}
+	
+	div#macaron {
+		background: pink;
+		top: -75px;
+	}
+	
+	div#macaron span {
+		right: 60px;
+	}
+	
+	div#chocolate{
+		background: gray;
+		top: -25px;
+	}
+	
+	div#chocolate span{
+		left: 30px;
+	}
+</style>
+</head>
+<body>
+	<div id="cookie">
+		<span>쿠키</span>
+	</div>
+	<div id="chocolate">
+		<span>초콜렛</span>
+	</div>
+	<div id="brownie">
+		<span>브라우니</span>
+	</div>
+	<div id="macaron">
+		<span>마카롱</span>
+	</div>
+<!-- 	<div id="cake">
+		<span>케이크</span>
+	</div> -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

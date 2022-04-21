@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display 실습</title>
+</head>
+<style>
+	body {
+		margin: 0;
+	}
+
+	div.center-wrap {
+		text-align: center;
+		width: 100%;
+	}
+
+	div#float-wrap {
+		display: inline-block;
+	}
+
+	div#float-wrap div{
+		float: left;
+	}
+	
+	div#float-wrap div {
+		width:30%;
+	}
+	
+	div#float-wrap div img {
+		width: 100%;
+	}
+	
+</style>
+<body>
+<!--
+	1. float 사용
+	2. display - flex 사용
+	3. display - table 사용
+-->
+	<div class="center-wrap">
+		<div id="float-wrap">
+			<div style="margin-right:5%;">
+				<img src="img1.jpg">
+			</div>
+			<div style="margin-right:5%;">
+				<img src="img2.jpg">
+			</div>
+			<div>
+				<img src="img3.jpg">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

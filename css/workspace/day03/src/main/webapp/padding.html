@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>안쪽 여백 - padding</title>
+<style>
+	div {
+		border: 2px solid orange;
+		padding: 15px;
+	}
+	
+	p {
+		background: coral;
+		/* padding: 50px 0; */
+		/* padding 속성 값은 auto를 지원하지 않는다. */
+		padding: 50px 0 50px 20px;
+	}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<p>저는 첫 번째 태그입니다.</p>
+		<div id="container1">
+			<p>저는 두 번째 태그입니다.</p>
+			<div id="container2">
+				<p>저는 세 번째 태그입니다.</p>
+				<div id="container3">
+					<p>저는 네 번째 태그입니다.</p>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>
