@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Source Han Sans", "Malgun Gothic", sans-serif;
+    color: #585454;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #ffffff;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+img {
+    vertical-align: top;
+}
+
+a {
+    color: inherit;
+}
+
+.layout-common .bg, .layout-index .bg, .layout-login .bg, .layout-register .bg, .layout-leave .bg {
+    position: relative;
+    background: #475CA9;
+    background: linear-gradient(135deg, #688fed 0%, #475ca9 45%, #688fed 100%);
+    padding: 40px 20px 60px;
+}
+
+.layout-common .bg img, .layout-index .bg img, .layout-login .bg img, .layout-register .bg img, .layout-leave .bg img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 86px;
+}
+
+.flash {
+    list-style: none;
+    margin: 30px auto 0;
+    max-width: 320px;
+}
+
+input, select, button, textarea {
+    font: inherit;
+    color: #666;
+    outline: 0;
+}
+
+.layout-common .form-wrap, .layout-index .form-wrap, .layout-login .form-wrap, .layout-register .form-wrap, .layout-leave .form-wrap {
+    position: relative;
+    z-index: 2;
+    max-width: 290px;
+    margin: -40px auto 30px;
+    padding: 40px 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px 3px rgb(80 80 80 / 10%);
+    overflow: hidden;
+}
+
+.layout-common .form-wrap .input-wrap, .layout-index .form-wrap .input-wrap, .layout-login .form-wrap .input-wrap, .layout-register .form-wrap .input-wrap, .layout-leave .form-wrap .input-wrap {
+    position: relative;
+    display: block;
+    border-radius: 20px;
+    padding: 0 15px;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #f4f4f4;
+}
+
+.layout-common .form-wrap .input-wrap i.fa, .layout-index .form-wrap .input-wrap i.fa, .layout-login .form-wrap .input-wrap i.fa, .layout-register .form-wrap .input-wrap i.fa, .layout-leave .form-wrap .input-wrap i.fa {
+    position: absolute;
+    top: 14px;
+    bottom: 12px;
+    right: 20px;
+    color: #777777;
+    font-size: 18px;
+}
+
+.layout-common .form-wrap .input-wrap input, .layout-common .form-wrap .input-wrap textarea, .layout-index .form-wrap .input-wrap input, .layout-index .form-wrap .input-wrap textarea, .layout-login .form-wrap .input-wrap input, .layout-login .form-wrap .input-wrap textarea, .layout-register .form-wrap .input-wrap input, .layout-register .form-wrap .input-wrap textarea, .layout-leave .form-wrap .input-wrap input, .layout-leave .form-wrap .input-wrap textarea {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    resize: none;
+    font-size: 16px;
+    padding: 10px 20px 10px 0;
+}
+
+.layout-common .form-wrap .submit, .layout-index .form-wrap .submit, .layout-login .form-wrap .submit, .layout-register .form-wrap .submit, .layout-leave .form-wrap .submit {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 50px;
+    background: #475CA9;
+    background: linear-gradient(to left, #688fed 0%, #475ca9 100%);
+    border: 0;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.layout-common .other-navigation, .layout-index .other-navigation, .layout-login .other-navigation, .layout-register .other-navigation, .layout-leave .other-navigation {
+    color: #495baa;
+    list-style: none;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0;
+}
+
+.layout-common .other-navigation li, .layout-index .other-navigation li, .layout-login .other-navigation li, .layout-register .other-navigation li, .layout-leave .other-navigation li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.layout-common .other-navigation li a, .layout-index .other-navigation li a, .layout-login .other-navigation li a, .layout-register .other-navigation li a, .layout-leave .other-navigation li a {
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.layout-common .oauth-wrap, .layout-index .oauth-wrap, .layout-login .oauth-wrap, .layout-register .oauth-wrap, .layout-leave .oauth-wrap {
+    list-style: none;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0;
+}
+
+.layout-common .oauth-wrap li a img, .layout-index .oauth-wrap li a img, .layout-login .oauth-wrap li a img, .layout-register .oauth-wrap li a img, .layout-leave .oauth-wrap li a img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.layout-common .oauth-wrap li a.apple-black, .layout-index .oauth-wrap li a.apple-black, .layout-login .oauth-wrap li a.apple-black, .layout-register .oauth-wrap li a.apple-black, .layout-leave .oauth-wrap li a.apple-black {
+    background-color: #000000;
+}
+
+.layout-common .oauth-wrap li a.facebook, .layout-index .oauth-wrap li a.facebook, .layout-login .oauth-wrap li a.facebook, .layout-register .oauth-wrap li a.facebook, .layout-leave .oauth-wrap li a.facebook {
+    background-color: #2858B5;
+}
+
+.layout-common .oauth-wrap li a.naver, .layout-index .oauth-wrap li a.naver, .layout-login .oauth-wrap li a.naver, .layout-register .oauth-wrap li a.naver, .layout-leave .oauth-wrap li a.naver {
+    background-color: #62D31E;
+}
+
+.layout-common .oauth-wrap li a.kakao, .layout-index .oauth-wrap li a.kakao, .layout-login .oauth-wrap li a.kakao, .layout-register .oauth-wrap li a.kakao, .layout-leave .oauth-wrap li a.kakao {
+    background-color: #F6E14B;
+}
+
+.layout-common .oauth-wrap li, .layout-index .oauth-wrap li, .layout-login .oauth-wrap li, .layout-register .oauth-wrap li, .layout-leave .oauth-wrap li {
+    display: inline-block;
+    margin: 0 14px;
+}
+
+.layout-common .oauth-wrap li a, .layout-index .oauth-wrap li a, .layout-login .oauth-wrap li a, .layout-register .oauth-wrap li a, .layout-leave .oauth-wrap li a {
+    display: block;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+}
