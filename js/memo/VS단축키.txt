@@ -1,0 +1,26 @@
+HTML 기본 단축키
+   1. 태그명(요소명) 작성 후 Tab
+      div -> Tab -> <div></div> 완성
+   
+   2. 태그명(요소명).클래스명 작성 후 Tab
+      div.wrap -> Tab -> <div class="wrap"></div> 완성
+
+   3. 태그명(요소명)#아이디명 작성 후 Tab
+      div#container -> Tab -> <div id="container"></div> 완성
+   
+   4. 태그명(요소명)*n 작성 후 Tab
+      div*4 -> Tab -> <div></div><div></div><div></div><div></div>
+      div.wrap*3 -> Tab ->
+      <div class="wrap"></div>
+          <div class="wrap"></div>
+          <div class="wrap"></div>
+
+
+Visual Code에서 html파일 실행하는 방법
+   1. 해당 경로로 직접 들어가서 크롬브라우저로 실행한다(불편해서 못함).
+   2. 마켓 플레이스에서 open in browser 설치, Alt + b로 실행
+      만약 크롬브라우저로 실행되지 않는다면 
+      해당 html파일 우클릭 > 연결 프로그램 > 다른 앱 선택
+      > 항상 .html을 이 앱으로 실행 체크 > Chrome 선택
+   3. 마켓 플레이스에서 live server 설치, Alt + l 그리고 Alt + o로 실행
+      문서가 저장되면 바로 화면에 반영됨.
