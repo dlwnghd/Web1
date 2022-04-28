@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout()</title>
+</head>
+<body>
+    <h1>지정된 시간이 흐른 뒤에 함수 실행</h1>
+</body>
+<script>
+    function writeName() {
+        document.write("<p>이주홍</p>");
+    }
+    // writeName();
+// setTimeout(callback 밀리초)
+// setTimeout에 전달한 callback 함수에 write()메소드를 사용했다면,
+// 기존에 작성해놨던 HTML 요소들이 사라진다.
+setTimeout(writeName, 3000);
+</script>
+</html>

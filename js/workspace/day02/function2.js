@@ -30,8 +30,8 @@
 // 이름, 나이, 성별을 입력받고
 // 이름이 없다면 "무명(no name)", 성별이 없다면 "선택 안함"을 대신 출력한다.
 function intro(age, ...datas){
-    let name = datas[0] ? datas[0] : "무명(no name)";
-    let gender = datas[1] ? datas[1] : "선택 안함";
+    let name = datas[0] || "무명(no name)";
+    let gender = datas[1] || "선택 안함";
 
     console.log(name);
     console.log(age + "살");
@@ -39,8 +39,8 @@ function intro(age, ...datas){
 }
 
 intro(10);
-intro(10, "이주홍", "남자");
-intro(10, "이주홍");
+intro(10, "한동석", "남자");
+intro(10, "한동석");
 
 // undefined, "", 0은 조건식 자리에 작성하면 false로 판단한다.
 // if(!undefined){
@@ -57,7 +57,11 @@ intro(10, "이주홍");
 
 // 문자열에 있는 includes()메소드에 조회할 값을 전달하면
 // 포함되어 있을 때 true, 없을 때에는 false이다.
-console.log("ABC".includes("A"));
-console.log("ABC".includes("Z"));
+// console.log("ABC".includes("A"));
+// console.log("ABC".includes("Z"));
 
-// 
+// 값이 없을 때 초기값을 설정한다.
+// 단, false로 취급되는 값이 들어오면 초기값이 들어가게 된다.
+// var data;
+// data = data || 10;
+// console.log(data);

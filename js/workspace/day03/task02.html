@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 실습2</title>
+</head>
+<body>
+     <!-- 
+        월화수목금토일
+        ---------------------(hr)
+        000은 출근
+
+        사용자에게 요일을 입력받고 월~목은 출근, 다른 날은 휴일을 출력한다.
+        요일은 "월", "화", ... 형식으로 입력받는다.
+    -->
+</body>
+<script>
+    let dayOfWeek = prompt("오늘은 무슨 요일이에요?", "월화수목금토일");
+    let msg = dayOfWeek;
+    
+    switch(dayOfWeek){
+        case '월': case '화': case '수': case '목':
+            msg += "요일은 출근";
+            break;
+        case '금': case '토': case '일':
+            msg += "요일은 휴일";
+            break;
+        default:
+            msg = "무슨 요일이냐니까?!!!!!!!!!!!!!!!!";
+            break;
+    }
+    document.write("<h1>" + msg + "</h1>");
+</script>
+</html>
