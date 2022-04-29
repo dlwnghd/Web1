@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+</head>
+<body>
+    <h1>구구단</h1>
+    <h3>입력받은 단 출력</h3>
+    <hr>
+</body>
+<script>
+    /* 사용자에게 단 수를 입력받은 후 해당 구구단 출력 */
+    while(true){
+        var input = prompt("단: ");
+        if(printGugudan(parseInt(input))){
+            break;
+        }
+    }
+
+    function printGugudan(dan){
+        // 문자가 섞여 있는 지 검사
+        // 실수인지 검사
+        // 0 또는 음수인지 검사
+        let check = input - dan != 0;
+        if(isNaN(dan) || check || dan < 1 || dan > 9){
+            alert("에휴...");
+            return false;
+        }
+        for(let i=1; i<10; i++){
+            document.write("<p>" + dan + "*" + i + "=" + dan * i + "</p>");
+        }
+        return true;
+    }
+</script>
+</html>
