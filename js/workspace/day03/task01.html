@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 실습1</title>
-</head>
-<body>
-    <!-- 
-        마우스를 올려보세요
-        ----------------------------------------(hr)
-        여기에 마우스를 올리면 배경색이 노란색으로 변합니다.
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>자바스크립트 실습1</title>
+    </head>
+    <body>
+        <!-- 마우스를 올려보세요 ----------------------------------------(hr) 여기에 마우스를 올리면 배경색이
+        노란색으로 변합니다. ※ 배경색 변경은 노란색으로 하고, 초기 배경색은 흰색으로 한다. ※ 태그이름.style.background =
+        '색이름'; -->
 
-        ※ 배경색 변경은 노란색으로 하고, 초기 배경색은 흰색으로 한다.
-        ※ 태그이름.style.background = '색이름';
-    -->
-    
-    <h1>마우스를 올려보세요</h1>
-    <hr>
-    <h2 style="background: white;" onmouseover="over(this)" onmouseout="out(this)">여기에 마우스를 올리면 배경색이 노란색으로 변합니다.</h2>
-</body>
-<script>
-    function over(h2){
-    h2.style.background = 'yellow';
-}
+        <h1>마우스를 올려보세요</h1>
+        <hr>
+        <h2
+            style="background: white;"
+            onmouseover="over(this)/*마우스를 올렸을때*/"
+            onmouseout="out(this)/*마우스를 올리지 않았을때*/">여기에 마우스를 올리면 배경색이 노란색으로 변합니다.</h2>
+    </body>
+    <script>
+        // h2를 매개변수로 받는 over 메소드
+        function over(h2) {
+            h2.style.background = 'yellow'; // h2의 style의 background의 value(값)을 'yellow'로 변경
+        }
 
-function out(h2){
-    h2.style.background = 'white';
-}
-</script>
+        // h2를 매개변수로 받는 out 메소드
+        function out(h2) {
+            h2.style.background = 'white';  // h2의 style의 background의 value(값)을 'white'로 변경
+        }
+    </script>
 </html>

@@ -7,7 +7,7 @@
     <title>자바스크립트 실습2</title>
 </head>
 <body>
-     <!-- 
+    <!-- 
         월화수목금토일
         ---------------------(hr)
         000은 출근
@@ -17,20 +17,26 @@
     -->
 </body>
 <script>
-    let dayOfWeek = prompt("오늘은 무슨 요일이에요?", "월화수목금토일");
-    let msg = dayOfWeek;
+    // 사용자로 부터 요일을 입력 받기
+    let dayOfWeek = prompt("오늘은 무슨 요일이에요?", "월화수목금토일");    // 입력칸안에 "월화수목금토일"이 입력되어 있는 상태
+    let msg = dayOfWeek;    // msg는 dayOfWeek의 값을 선언
     
+    // dayOfWeek의 값에 따른 switch문
     switch(dayOfWeek){
+        // '월~목'요일 일 경우
         case '월': case '화': case '수': case '목':
-            msg += "요일은 출근";
+            msg += "요일은 출근";   // "요일은 출근"을 msg에 있던 값과 연결
             break;
+        // '금~일'요일 일 경우
         case '금': case '토': case '일':
-            msg += "요일은 휴일";
+            msg += "요일은 휴일";   // "요일은 휴일"을 msg에 있던 값과 연결
             break;
+        // 그 이외의 값
         default:
-            msg = "무슨 요일이냐니까?!!!!!!!!!!!!!!!!";
+            msg = "무슨 요일이냐니까?!!!!!!!!!!!!!!!!"; // msg는 "무슨 요일이냐니까?!!!!!!!!!!!!!!!!"로 선언
             break;
     }
+    // h1태그안에 msg를넣어서 출력
     document.write("<h1>" + msg + "</h1>");
 </script>
 </html>

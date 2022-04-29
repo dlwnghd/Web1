@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 실습3</title>
-</head>
-<body>
-    <!-- 
-        분석 결과
-        --------------------------(hr)
-        통과!
-
-        정확한 암호가 입력될 때까지 계속 prompt()를 사용하여 암호를 입력받는다.
-        암호는 "호랑이"이다.
-
-    -->
-    <h1>분석 결과</h1>
-    <hr>
-</body>
-<script>
-    let code = '';
-    while (true){
-        if(code == '호랑이'){
-            break;
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>자바스크립트 실습3</title>
+    </head>
+    <body>
+        <!-- 분석 결과 
+        --------------------------(hr) 
+        통과! 정확한 암호가 입력될 때까지 계속 prompt()를 사용하여
+        암호를 입력받는다. 
+        암호는 "호랑이"이다. -->
+        <h1>분석 결과</h1>
+        <hr>
+    </body>
+    <script>
+        while (true) { // 무한 반복
+            // pw는 사용자가 입력한 값
+            let pw = prompt("어쩔 암호?");
+            const code = "호랑이";
+            if (pw == code) { // 만약 pw의 값이 code와 같다면(타입은 달라도 됨)
+                // p태그 안에 '통과!' 출력
+                document.write("<p>통과!</p>");
+                break;
+            }
         }
-        code = prompt("암호를 입력하세요.");
-    }
-    document.write("<p>통과!</p>");
-</script>
+    </script>
 </html>
