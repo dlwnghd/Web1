@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디를 이용한 선택</title>
+    <style>
+        /* 
+            css에서는 아이디가 중복되어도 모든 스타일이 적용된다.
+            ⭐하지만 어떤 개발자도 이렇게(아이디를 중복해서) 쓰지 않는다.
+         */
+        #odd {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <div id="odd">
+        첫번째 DIV입니다.
+    </div>
+    <div id="even">
+        두번째 DIV입니다.
+    </div>
+    <div id="odd">
+        세번째 DIV입니다.
+    </div>
+</body>
+<script>
+    const div = document.getElementById("odd");
+    console.log(div);
+    div.style.color = "red";
+</script>
+</html>
