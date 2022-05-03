@@ -14,7 +14,7 @@ console.log(train);
 let trainJSON = JSON.stringify(train);
 console.log(trainJSON);
 
-// file.writeFile('day05/train.json', trainJSON, "utf-8", function(e){
+// file.writeFile('js/workspace/day05/train.json', trainJSON, "utf-8", function(e){
 //     if(e){
 //         console.log(e);
 //     }else{
@@ -27,9 +27,9 @@ console.log(trainJSON);
 // 다른 프로퍼티가 필요 없기 때문에 객체를 level로 변경해야 한다.
 file.readFile('js/workspace/day05/train.json', 'utf-8', function(e, content){
     let trainAr = JSON.parse(content);
-    // trainAr.map(function(v){return v.level;}).forEach(function(v){console.log(v)});
+    trainAr.map(function(v){return v.level;}).forEach(function(v){console.log(v)});
 
-    for(let i in trainAr){
-        console.log(trainAr[i].level);
-    }
+    // for(let i in trainAr){
+    //     console.log(trainAr[i].level);
+    // }
 });

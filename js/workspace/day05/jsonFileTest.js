@@ -18,7 +18,7 @@ userJSON = JSON.stringify(user);
 // });
 
 // readFile(경로, 인코딩, 콜백함수(에러객체, 내용))
-file.readFile('day05/user.json', 'UTF-8', function(e, content){
+file.readFile('js/workspace/day05/user.json', 'UTF-8', function(e, content){
     let user = JSON.parse(content);
     console.log(user.name);
     console.log('아이디: %s', user.id);

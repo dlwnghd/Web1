@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date()</title>
+    <title>코어객체 - Date()</title>
 </head>
 <body>
-    <h3 id="asdf">방문 시간에 따라 변하는 배경</h3>
+    <h3>방문 시간에 따라 변하는 배경</h3>
     <hr>
 </body>
 <script>
     // 홀수일 때 pink로 배경색 변경
     // 짝수일 때 orange로 배경색 변경
+    var now = new Date();
+
+    // body의 style의 backgroundColor프로퍼티까지 접근해야 한다
+    document.body.style.backgroundColor = now.getSeconds() % 2 == 0 ? "orange" : "pink"
 </script>
 </html>

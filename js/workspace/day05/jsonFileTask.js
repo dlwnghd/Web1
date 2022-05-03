@@ -2,31 +2,27 @@
 // JSON형식으로 변환한 뒤, day05/product.json으로 출력한다.
 // day05/product.json에 있는 JSON 형식을 JS Object타입으로 변환한다.
 // 각 프로퍼티를 출력한다.
-
-let file = require('fs'); //node.js에 있는 모듈을 import한다.
+let file = require('fs');
 let product = new Object();
 let productJSON;
 
-product.name = "가위";
-product.price = 1800;
-product.storage = 12;
+product.name = "굴렁쇠";
+product.price = 4900;
+product.stock = 4;
 
 productJSON = JSON.stringify(product);
 
-// writeFile(경로, 작성할 내용, 인코딩 방식, 콜백함수(에러객체))
-// file.writeFile("js/workspace/day05/product.json", productJSON, 'UTF-8', function(e){
+// file.writeFile('js/workspace/day05/product.json', productJSON, 'utf-8', function(e){
 //     if(e){
-//         console.log(e);
+//         console.log(e)
 //     }else{
-//         console.log("파일 출력 성공");
+//         console.log("파일 출력 성공!");
 //     }
 // });
 
-// readFile(경로, 인코딩, 콜백함수(에러객체, 내용))
-file.readFile("js/workspace/day05/product.json", 'UTF-8', function(e, content){
+file.readFile('js/workspace/day05/product.json', 'utf-8', function(e, content){
     let product = JSON.parse(content);
-    console.log('상품명: %s',product.name);
-    console.log('가격: %s', product.price);
-    console.log('재고: %s', product.storage);
+    console.log(product.name);
+    console.log(product.price);
+    console.log(product.stock);
 });
-
