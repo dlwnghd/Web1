@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>포커스 이벤트</title>
 </head>
 <body>
-    
+    <h3>포커스 이벤트</h3>
+    <hr>
+    <form name="joinForm">
+        <input type="text" name="id" placeholder="아이디" autocomplete="off">
+        <input type="password" name="pw" placeholder="비밀번호">
+        <p id="result"></p>
+    </form>
 </body>
+<script>
+    // form태그는 자동으로 객체가 생성되고 객체명은 name속성에 작성한 이름이다.
+    // form태그의 프로퍼티는 자식요소 중 input태그의 name이다.
+    // 프로퍼티 접근 시 해당 객체를 가져온다.
+    const input = joinForm.id;
+    const p = document.querySelector("form p#result");
+
+    input.onblur = function(){
+        if(!this.value){
+            p.innerHTML = "필수 정보입니다.";
+            p.style.color = "red";
+            this.focus();
+        }else{
+            p.innerHTML = "";
+        }
+    }
+</script>
 </html>
