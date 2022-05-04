@@ -8,18 +8,25 @@
 </head>
 <body>
     <p>DOM 트리에 동적으로 객체를 삽입할 수 있다.</p>
-    <p>createElement("태그명"), appendChild("태그객체"), removeChild("태그객체")</p>
+    <p>createElement("태그명") : 해당 태그 생성</p>
+    <p>appendChild("태그객체") : 해당 태그의 자식 태그 생성</p>
+    <p>removeChild("태그객체") : 해당 태그의 자식 태그 제거</p>
     <p>위 3개의 메소드를 이용해서 새로운 객체를 생성, 삽입, 삭제한다.</p>
     <a href="javascript:createDIV()">DIV 생성</a>
 </body>
 <script>
     function createDIV(){
+        // div 태그 생성
         const new_div = document.createElement("div");
+        // 태그의 내부 글자
         new_div.innerHTML = "새로 생성된 div입니다.";
+        // 태그의 스타일의 backgroundColor 선언
         new_div.style.backgroundColor = "yellow";
+        // 자식 태그 추가
         document.body.appendChild(new_div);
-
+        // div태그를 클릭할때마다 실행되는 function
         new_div.onclick = function(){
+            // 자기자신의 자식 삭제
             this.parentElement.removeChild(this);
         }
     }

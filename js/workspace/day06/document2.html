@@ -1,3 +1,9 @@
+<!-- 
+    input태그의 name이 key값이 되고
+                value가 value값이 된다.
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,22 +29,24 @@
     </form>
 </body>
 <script>
+    // const로 호출했기 때문에 checkboxex는 후에 값이 변하지 않음
     const checkboxes = document.getElementsByName("language");
     checkboxes.forEach(function(checkbox){
         console.log(checkbox);
-        checkbox.checked = true;
+        checkbox.checked = true;    // checkbox의 checked의 값을 true로 변환 => [전체 동의] 버튼에서 많이 활용됨
     });
+
 
     // HTML 태그에 checked 속성을 부여하면, js checked 프로퍼티를 false로 설정해도
     // checked 속성이 HTML 요소에 남아있다.
-    // 따라서 체크 여부를 검사할 때에는 JS 프로퍼티로 검사하는 것이 정확하다.
-    checkboxes.forEach((checkbox) => {
+    // ⭐따라서 체크 여부를 검사할 때에는 JS 프로퍼티로 검사하는 것이 정확하다.⭐
+    checkboxes.forEach(/*익명 메소드*/(checkbox) => {   // 각각의 요소를 순서대로 전달
         console.log(checkbox.checked);
-        console.log(checkbox.getAttribute("checked"));
-        checkbox.checked = false;
+        console.log(checkbox.getAttribute("checked"));  // getAttribute() : HTML의 속성값을 보는 친구
+        checkbox.checked = false;   // checkbox의 checked의 값을 false로 변환
     });
 
-    //사용자가 입력한 아이디와 패스워드를 콘솔에 출력한다.
+    // 사용자가 입력한 아이디와 패스워드를 콘솔에 출력한다.
     const inputId = document.getElementsByName("id");
     const inputPw = document.getElementsByName("pw");
     console.log(inputId[0].value);
