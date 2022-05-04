@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>첨부파일 썸네일</title>
+    <style>
+        label[for='attach'] div{
+            width: 150px;
+            height: 150px;
+            background-image: url('img/attach.png');
+            background-size: 100% 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <label for="attach">
+        <div></div>
+    </label>
+    <input type="file" id="attach" style="display:none">
+</body>
+<script>
+    const file = document.querySelector("input[type='file']");
+    const thumbnail = document.querySelector("label[for='attach'] div");
+    // file 타입의 input 태그에 파일을 업로드할 때 마다,
+    // change 이벤트가 발생한다.
+    // change 이벤트가 발생한 객체에 대한 정보는 event 매개변수로 전달받는다.
+    file.addEventListener("change", function(event){
+        let reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload = function(event){
+            let url = event.target.result;
+            if(url.includes("image")){
+                thumbnail.style.backgroundImage = "url('" + url +"')";
+            }else{
+                thumbnail.style.backgroundImage = "url('img/attach.png')";
+            }
+        }
+    });
+</script>
+</html>
