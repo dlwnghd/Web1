@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 기초 예제</title>
+</head>
+<body>
+    <ul class="car">
+        <li>벤츠</li>
+        <li>아우디</li>
+        <li>비엠더블유</li>
+    </ul>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    let lists = $("li");
+    let ul = $(".car");
+
+    console.log(lists);
+    // ul태그의 모든 자식 태그 가져오기
+    console.log(ul.children());
+    // ul태그의 자식 중 첫번째 자식의 내용 변경하기
+    console.log(ul.children().first().text("제네시스"));
+    // ul태그의 부모태그 가져오기
+    console.log(ul.parent());
+    // li태그의 부모 중 ul태그 가져오기
+    console.log(lists[1].closest("ul"));
+    // li태그의 부모 중 body태그 가져오기
+    console.log(lists[1].closest("body"));
+    // body태그의 자식 중 li태그 가져오기
+    console.log($("body").find("li"));
+    // ul 태그의 마지막 자식요소를 삭제하기
+    console.log(ul.children().last());
+    console.log(ul.children().eq(2));
+    console.log(ul.children()[2]);
+    console.log($(ul.children()[2]));
+    ul.children().last().remove();
+    // ul태그 마지막 자식요소로 요소 추가하기
+    ul.append("<li>람보르기니</li>");
+    // 속성 값 가져오기
+    console.log(ul.attr("class"));
+    // 속성명 변경하기
+    ul.attr("class", "superCar");
+</script>
+</html>

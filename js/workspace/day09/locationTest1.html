@@ -1,0 +1,51 @@
+<!-- 네이버, 다음, 구글, 3가지 사이트를 사용자가 골라서 이동할 수 있는 페이지를 제작한다. 선택한 사이트를 location객체를
+사용하여, 이동시킨다. radio버튼 3개를 구현해야하며, 모두 동일한 name을 작성한다. JS에서 name으로 해당 radio객체를 가져오면
+선택한 value를 가져올 수 있다. form태그 안에 radio버튼을 제작하고, form객체를 통해 input태그를 가져온다. value
+프로퍼티를 사용하여 사용자가 선택한 사이트를 구분한다. 이동 버튼을 클릭하면 선택한 사이트로 이동할 수 있게 구현한다. location.href
+= "이동할 URL"; -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>사이트 이동</title>
+    </head>
+    <body>
+        <form action="" name="myForm">
+            <label>
+                네이버
+                <input type="radio" name="site" value="naver"></label>
+            <label>
+                다음
+                <input type="radio" name="site" value="daum"></label>
+            <label>
+                구글
+                <input type="radio" name="site" value="google"></label>
+            <div>
+                <input type="button" value="이동" onclick="send()"></div>
+        </form>
+    </body>
+    <script>
+        function send() {
+            let url = "";
+            if (!myForm.site.value) {
+                alert("사이트를 선택해주세요.");
+            }
+
+            switch (myForm.site.value) {
+                case 'naver':
+                    url = "https://www.naver.com";
+                    break;
+                case 'daum':
+                    url = "https://www.daum.net";
+                    break;
+                case 'google':
+                    url = "https://www.google.com";
+                    break;
+            }
+
+            location.href = url;
+        }
+    </script>
+</html>
