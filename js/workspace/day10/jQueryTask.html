@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 체크박스</title>
+</head>
+<body>
+    <form action="" name="myForm">
+        <div>
+            <label>
+                전체 동의
+                <input type="checkbox" class="all">
+            </label>
+        </div>
+        <div>
+            <label>
+                서비스 이용약관 동의
+                <input type="checkbox" name="term1" class="term">
+            </label>
+        </div>
+        <div>
+            <label>
+                정보 수집 동의
+                <input type="checkbox" name="term2" class="term">
+            </label>
+        </div>
+        <div>
+            <label>
+                마케팅 수신 동의
+                <input type="checkbox" name="term3" class="term">
+            </label>
+        </div>
+    </form>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+// 하나의 약관이라도 해제가 된다면 전체 동의 체크 해제
+// 각 항목이 모두 체크되면 전체 동의 체크
+
+    const $all = $(".all");
+    const $terms = $(".term")
+
+    $all.click(function(){
+        if($(this).is(":checked")){
+            $terms.prop("checked", true);
+        }else{
+            $terms.prop("checked", false);
+        }
+    });
+
+    $terms.on('click', function(){
+        if(!$(this).is(":checked")){
+            $all.prop('checked', false);
+        }
+
+        // $('선택자').filter("선택자")
+        // filter를 통해 전달한 선택자로 걸러낼 수 있다.
+        // 조건식이 true인 객체만 추출한다.
+        if($terms.filter(":checked").length == 3){
+            $all.prop('checked', true);
+        }
+
+    });
+
+
+</script>
+</html>
