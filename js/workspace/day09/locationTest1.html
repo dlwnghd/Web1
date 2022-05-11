@@ -28,24 +28,26 @@
     </body>
     <script>
         function send() {
-            let url = "";
-            if (!myForm.site.value) {
-                alert("사이트를 선택해주세요.");
+            let url = "";   // url 생성
+            if (!myForm.site.value) {   // myForm.site.value가 false라면
+                alert("사이트를 선택해주세요.");    // 알람 : 사이트를 선택해주세요.
             }
 
-            switch (myForm.site.value) {
-                case 'naver':
-                    url = "https://www.naver.com";
-                    break;
-                case 'daum':
-                    url = "https://www.daum.net";
-                    break;
-                case 'google':
-                    url = "https://www.google.com";
-                    break;
+            // switch문을 통해 사이트별로 이동
+            switch (myForm.site.value) {    // myForm.site.value의 값을 받아
+                case 'naver':   // 'naver'라면
+                    url = "https://www.naver.com";  // url을 네이버사이트로 변경
+                    break;  // 탈출
+                case 'daum':    // 'daum'이라면
+                    url = "https://www.daum.net";  // url을 다음사이트로 변경
+                    break;  // 탈출
+                case 'google':  //'google'이라면
+                    url = "https://www.google.com";  // url을 구글사이트로 변경
+                    break;  // 탈출
             }
-
-            location.href = url;
+            // location 객체
+            // - href: 페이지의 URL 전체 정보 반환. URL을 지정하여 페이지 이동 가능.
+            location.href = url;    // 페이지로 이동
         }
     </script>
 </html>

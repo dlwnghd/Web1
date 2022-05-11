@@ -34,10 +34,14 @@
     </div>
 </body>
 <script>
+    // checkbox타입의 input을 checkbox로 정의
     let checkbox = document.querySelector("input[type='checkbox']");
+    // checkbox의 이벤트로 click이벤트가 발생하면
     checkbox.addEventListener('click', function(){
+        // check는 checkbox의 checked프로퍼티라고 정의 : true 또는 false값으로 있을거임
         let check = checkbox.checked;
         if(check){
+            // window 객체 닫기
             window.close();
         }
     })

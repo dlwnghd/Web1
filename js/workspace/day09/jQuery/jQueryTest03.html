@@ -10,20 +10,26 @@
     <form action="" name="myForm">
         <div>
             <label>
-                서비스 이용약관 동의
+                전체 동의
                 <input type="checkbox" name="term1" class="term">
             </label>
         </div>
         <div>
             <label>
-                정보 수집 동의
+                서비스 이용약관 동의
                 <input type="checkbox" name="term2" class="term">
             </label>
         </div>
         <div>
             <label>
-                마케팅 수신 동의
+                정보 수집 동의
                 <input type="checkbox" name="term3" class="term">
+            </label>
+        </div>
+        <div>
+            <label>
+                마케팅 수신 동의
+                <input type="checkbox" name="term4" class="term">
             </label>
         </div>
     </form>
@@ -31,9 +37,34 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     let $inputs = $(".term");
+
+    // $($inputs.get(0)).prop('checked', true);
+    console.log($(($inputs.get())));
+
     $inputs.on("click", function(){
         console.log($(this).is(":checked"));    // 체크 여부 검사
-        console.log($(this).prop(":checked"));  // 값 변경에 사용
+        console.log($(this).prop("checked"));  // 값 변경에 사용
+    });
+
+
+
+    // 혼자서 만들어본 것
+    // 전체 동의
+    $($inputs.get(0)).on("click", function(){
+        if($(this).is(":checked")){
+            $($inputs.get()).prop('checked', true);
+        }else{
+            $($inputs.get()).prop('checked', false);
+        }
+    });
+
+    // 개별 클릭으로 전체 동의 시
+    $inputs.on("click", function(){
+        if(($($inputs.get(1)).is(":checked")) && ($($inputs.get(2)).is(":checked")) && ($($inputs.get(3)).is(":checked"))){
+            $($inputs.get(0)).prop('checked', true);
+        }else{
+            $($inputs.get(0)).prop('checked', false);
+        }
     });
 </script>
 </html>
