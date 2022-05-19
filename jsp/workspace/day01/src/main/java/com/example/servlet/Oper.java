@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.example.calc.Calc;
 
-/**
+/*
  * Servlet implementation class Oper
  */
 @WebServlet("/Oper")
 public class Oper extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
+    /*
      * @see HttpServlet#HttpServlet()
      */
     public Oper() {
@@ -27,7 +27,7 @@ public class Oper extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
+	/*
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -92,6 +92,7 @@ public class Oper extends HttpServlet {
 			}
 			break;
 		}
+		
 		if(resultMsg == null) {
 			resultMsg = "결과: " + result;
 		}
