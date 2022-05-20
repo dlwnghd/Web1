@@ -1,0 +1,9 @@
+CREATE database test;
+use test;
+
+CREATE TABLE guest(
+	userNum int auto_increment PRIMARY key,
+	userId varchar(1000),
+	userPw varchar(1000),
+	userAge tinyint
+);
