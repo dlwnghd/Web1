@@ -7,8 +7,8 @@
 <title>액션 태그 include</title>
 </head>
 <body>
-	<jsp:inclue page="header.jsp"/>
+	<jsp:include page="header.jsp"/>
 	<h4>---------------------------------현재 페이지 영역</h4>
-	<jsp:inclue page="footer.jsp"/>
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>

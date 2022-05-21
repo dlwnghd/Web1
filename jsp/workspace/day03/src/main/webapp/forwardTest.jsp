@@ -7,6 +7,7 @@
 <title>액션 태그 forward</title>
 </head>
 <body>
+	<!-- action태그를 사용 -->
    <form action="controller.jsp">
       보고 싶은 페이지 선택 : 
       <select name="site">
@@ -14,6 +15,7 @@
          <option value="daum">다음</option>
          <option value="google">구글</option>
       </select>
+      <!-- 데이터 전송 -->
       <input type="submit" value="전송">
    </form>
 </body>

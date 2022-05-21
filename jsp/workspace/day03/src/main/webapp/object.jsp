@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%request.setCharacterEncoding("UTF-8");%>
+<%request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +8,11 @@
 <title>내장 객체 request</title>
 </head>
 <body>
-<!-- 
+<!--
 	이름과 생일이 모두 입력되었다면, 전송
 	objectOk.jsp에서는 전달받은 이름과 생일을 출력
- -->
-	<form action="objectOk.jsp" name="join" method="post">
+-->
+    <form action="objectOk.jsp" name="join" method="post">
         <fieldset>
             <legend>개인 정보</legend>
             <input type="text" name="name">
@@ -23,5 +23,54 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+	const $name = $("input[name='name']");
+	const $birthday = $("input[name='birthday']");
+	
+	$name.on("click", function(){
+		$(this).removeAttr("style");
+		$(this).removeAttr("placeholder");
+	})
+	
+	$birthday.click(function(){
+		$(this).removeAttr("style");
+	});
+	
+	$("input[type='button']").on("click", function(){
+		if(!$name.val()){
+			$name.css('border-color', 'red');
+			$name.attr('placeholder', '성함을 입력하세요');
+			return;
+		}
+		
+		if(!$birthday.val()){
+			$birthday.css('border-color', 'red');
+			return;
+		}
+		
+		join.submit();
+		
+	});
+	
 </script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

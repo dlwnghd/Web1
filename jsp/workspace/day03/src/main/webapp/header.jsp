@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Header</title>
 </head>
 <body>
-	<h3>헤더 페이지 영역</h3>
+	<h3>헤더 페이지 영역!</h3>
 </body>
 </html>
