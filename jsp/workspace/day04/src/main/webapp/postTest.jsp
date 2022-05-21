@@ -7,11 +7,11 @@
 <title>POST 방식의 요청</title>
 </head>
 <body>
-   <h1>POST 방식의 요청</h1>
-   <form action="getTest.jsp" method="post">
-      <input type="text" value="Seoul" name="city" readonly>
-      <input type="text" value="15155" name="zipcode" readonly>
-      <button>POST 방식으로 요청 보내기!</button>
-   </form>
+	<h1>POST 방식의 요청</h1>
+	<form action="getTest.jsp" method="post">
+		<input type="text" value="Seoul" name="city" readonly>
+		<input type="text" value="15155" name="zipcode" readonly>
+		<button>POST 방식으로 요청 보내기!</button>
+	</form>
 </body>
 </html>
