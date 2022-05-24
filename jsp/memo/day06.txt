@@ -1,0 +1,36 @@
+MVC - model2 방식
+
+   a.jsp --> web.xml --> Front-Controller.java --> b.jsp
+               ↓
+            Controller.java
+               ↓
+                DAO.java
+               ↓
+               DB
+
+ a.jsp에서 다음 페이지를 이동하기 전 필요한 비지니스 로직을 완벽하게 분리하여 관리한다.
+ 사용자가 정의한 확장자(.me, .bo, ...)를 페이지 이동 주소(URL)에 작성하게 되면
+ web.xml에 가서 경로를 찾는다. web.xml에 파일 경로를 하나씩 모두 만들게 되면 코드가 길어지기 때문에
+ *.me와 같이 그룹화시킨 확장자로 요청을 하나의 경로로 보내주도록 설정한다.
+ 이 경로를 알맞는 Front-Controller.java 경로로 설정해 놓는다.
+ Front-Controller에서는 들어온 요청에서 .me 앞의 요청 명으로 어떤 로직을 수행할 지를 판단하도록
+ 분기 처리를 한다.
+ 비지니스 로직을 Front-Controller에서 작업하게 되면 마찬가지로 코드가 길어지고
+ 유지보수 및 재사용이 어렵기 때문에 요청별로 Controller를 만들어서 req와 resp를 받을 메소드를
+ 선언하여 구현한다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
