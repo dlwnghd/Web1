@@ -4,9 +4,7 @@
 		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.jdt.ui.java"/>
-			<item value="org.eclipse.jst.j2ee.internal"/>
 			<item value="org.eclipse.jpt.jaxb"/>
-			<item value="org.eclipse.jst.ws.ui.new"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">
@@ -16,8 +14,9 @@
 		</list>
 	</section>
 	<section name="ZipFileImportWizard">
-		<item key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
+		<item key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="true"/>
 		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="D:\Web_1900_ljh\jsp\memo\day06.zip"/>
 			<item value="C:\Users\alion\OneDrive\바탕 화면\day06.zip"/>
 		</list>
 	</section>

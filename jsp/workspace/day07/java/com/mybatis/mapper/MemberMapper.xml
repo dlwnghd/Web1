@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Member">
+	<!-- 회원가입 -->
+	<!-- id: 사용할 메소드의 이름, parameterType: 쿼리작성에 필요한 변수를 담고있는 친구의 타입 -->
+	<insert id="join" parameterType="memberVO">
+		insert into tbl_member
+		(member_id, member_name, member_pw, member_gender, member_address, member_address_detail)
+		values(#{memberId}, #{memberName}, #{memberPw}, #{memberGender}, #{memberAddress}, #{memberAddressDetail})
+	</insert>
+</mapper>

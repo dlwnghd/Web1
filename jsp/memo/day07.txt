@@ -1,0 +1,89 @@
+Ajax(Asynchronous Javascript and XML)
+	Ajax는 웹 페이지 전체를 다시 로딩하지 않고도, 웹 페이지 일부분만을 갱신할 수 있고
+	백그라운드 영역에서 서버와 통신하여, 그 결과를 웹 페이지의 일부분에만 표시할 수 있다.
+	이 때 서버와 아래와 같은 데이터를 주고 받을 수 있다.
+	- JSON
+	- XML
+	- HTML
+	- 텍스트 등
+
+Ajax의 특징
+	1. 웹 페이지 전체를 다시 로딩하지 않고도, 웹 페이지의 일부분만을 갱신할 수 있다.
+	2. 반복적인 데이터를 요청하면 느려지거나 작동하지 않게 된다(pending).
+	3. 웹 페이지가 로드된 후에 서버로 데이터 요청을 보내거나 받을 수 있다.
+	4. 페이지 이동이 없기 때문에 히스토리 관리가 안된다.
+	
+
+Ajax 문법(jQuery)
+	
+	$.ajax({
+		url: "요청할 경로",
+		type: "GET, POST 등",
+		data: {키:value,...},
+		contentType: "data에 작성할 타입",
+		dataType: "돌려받을 응답 값의 타입",
+		success: function(응답 값을 받을 매개변수){성공 시 실행할 문장 작성},
+		error: function(request, status, error){오류 발생 시 실행할 문장 작성}
+	});
+
+-------------------------------------------------------------------------------
+EL문과 JSTL: 페이지 가독성 상승
+	자바 구문을 라이브러리 형태로 만들어 놓고 필요할 때마다 태그로 꺼내쓰는 기술이다.
+	JSP페이지 내에서 자바코드와 HTML 코드가 섞여 있으면 가독성이 떨어지고 복잡해진다.
+	EL문과 JSTL문을 사용하면 HTML 태그로만 구성된 일관된 소스코드를 볼 수 있다는 장점이 있다.
+
+- EL(Expression Language)
+	값을 간결하고 간편하게 출력할 수 있도록 해주는 기술
+
+	자바			EL
+	<%=name%>		${name}
+	<%=member.getName()$>	${member.getName()}
+
+	값을 찾을 때에는 작은 Scope에서 큰 Scope로 찾는다.
+	page > request > session > application
+
+	원하는 Scope의 변수를 찾을 때 아래와 같이 사용한다.
+	${param.name} : GET방식의 쿼리 스트링으로 전달된 파라미터 중 name을 찾는다.
+	${requestScope.name} : request.setAttribute()로 저장된 파라미터 중 name을 찾는다.
+	${sessionScope.name} : session.setAttribute()로 저장된 데이터 중 name을 찾는다.
+
+- EL 연산자
+
+	%, mod
+	&&, and
+	||, or
+	>, lt
+	<, gt
+	>=, le
+	<=, ge
+	==, eq
+	!=, ne
+	empty : 값이 비어있으면 true, 값이 있으면 false
+	!, not
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

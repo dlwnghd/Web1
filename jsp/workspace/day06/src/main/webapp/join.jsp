@@ -7,51 +7,51 @@
 <title>회원가입</title>
 </head>
 <body>
-   <section>
-      <form action="" name="joinForm" method="post">
-         <p>
-            <label>
-               아이디 : <input type="text" name="memberId">
-            </label>
-         </p>
-         <p>
-            <label>
-               이름 : <input type="text" name="memberName">
-            </label>
-         </p>
-         <p>
-            <label>
-               비밀번호 : <input type="password" name="memberPw">
-            </label>
-         </p>
-         <p>
-            <label>
-               비밀번호 확인 : <input type="password" id="memberPw">
-            </label>
-         </p>
-         <p>
-            성별 : 
-            <label>
-               남자 <input type="radio" name="memberGender" value="M">
-            </label>
-            <label>
-               여자 <input type="radio" name="memberGender" value="W">
-            </label>
-            <label>
-               선택안함 <input type="radio" name="memberGender" value="N">
-            </label>
-         </p>
-         <p>
-            <input type="text" id="sample5_address" placeholder="주소" name="memberAddress">
-            <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
-            <input type="text" name="memberAddressDetail" placeholder="상세 주소">
-            <div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
-         </p>
-         <p>
-            <input type="button" value="가입 완료" onclick="join()">
-         </p>
-      </form>
-   </section>
+	<section>
+		<form action="" name="joinForm" method="post">
+			<p>
+				<label>
+					아이디 : <input type="text" name="memberId">
+				</label>
+			</p>
+			<p>
+				<label>
+					이름 : <input type="text" name="memberName">
+				</label>
+			</p>
+			<p>
+				<label>
+					비밀번호 : <input type="password" name="memberPw">
+				</label>
+			</p>
+			<p>
+				<label>
+					비밀번호 확인 : <input type="password" id="memberPw">
+				</label>
+			</p>
+			<p>
+				성별 : 
+				<label>
+					남자 <input type="radio" name="memberGender" value="M">
+				</label>
+				<label>
+					여자 <input type="radio" name="memberGender" value="W">
+				</label>
+				<label>
+					선택안함 <input type="radio" name="memberGender" value="N">
+				</label>
+			</p>
+			<p>
+				<input type="text" id="sample5_address" placeholder="주소" name="memberAddress">
+				<input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
+				<input type="text" name="memberAddressDetail" placeholder="상세 주소">
+				<div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
+			</p>
+			<p>
+				<input type="button" value="가입 완료" onclick="join()">
+			</p>
+		</form>
+	</section>
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=37a9abf54fb9bec320d474d06c964451&libraries=services"></script>
@@ -103,6 +103,7 @@
     }
 </script>
 </html>
+
 
 
 

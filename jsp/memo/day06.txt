@@ -1,12 +1,12 @@
 MVC - model2 방식
 
-   a.jsp --> web.xml --> Front-Controller.java --> b.jsp
-               ↓
-            Controller.java
-               ↓
-                DAO.java
-               ↓
-               DB
+	a.jsp --> web.xml --> Front-Controller.java --> b.jsp
+					↓
+				Controller.java
+					↓
+				    DAO.java
+					↓
+					DB
 
  a.jsp에서 다음 페이지를 이동하기 전 필요한 비지니스 로직을 완벽하게 분리하여 관리한다.
  사용자가 정의한 확장자(.me, .bo, ...)를 페이지 이동 주소(URL)에 작성하게 되면
@@ -18,6 +18,17 @@ MVC - model2 방식
  비지니스 로직을 Front-Controller에서 작업하게 되면 마찬가지로 코드가 길어지고
  유지보수 및 재사용이 어렵기 때문에 요청별로 Controller를 만들어서 req와 resp를 받을 메소드를
  선언하여 구현한다.
+ 메소드 내부에서의 DB연산 작업들은 모두 DAO로 분리하여 사용한다.
+ 내부 작업이 모두 완료되면 페이지를 이동할 것인지, 어떤 방식으로 전송할 것인지, 그리고 어디로 이동할 것인지를
+ 리턴해야 한다.
+
+ - redirect(request 객체 초기화)
+	redirect 방식으로 전송하면 request객체가 초기화되므로 이전 정보가 사라진다.
+	글 작성, 결제 등
+
+ - forward(request 유지)
+	응답 페이지로 값을 전달해야 할 경우 사용한다.
+	목록, 검색 등
 
 
 
