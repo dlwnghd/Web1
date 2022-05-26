@@ -61,13 +61,13 @@
 <script>
    function checkId(){
       $.ajax({
-         url: "/day07/CheckIdOk.me",
+         url: "/day07/CheckIdOk.me", /* 루트를 부를 때 day07도 붙여줘야한다. */
          type: "get",
-         data: {memberId: $("input[name='memberId']").val()},
-         contentType: "application/json; charset=utf-8",
-         dataType: "json",
+         data: {memberId: $("input[name='memberId']").val()},	/* memberID에 사용자가 입력한 값이 담긴다. */
+         contentType: "application/json; charset=utf-8",	/* json타입으로 전달 */
+         dataType: "json",	/* 돌려받을 데이터 타입 json */
          success: function(result){
-            if(result.check){
+            if(result.check){	/* 아이디 중복 */
                $("p#result").text("중복된 아이디입니다.");
             }else{
                $("p#result").text("사용가능한 아이디입니다.");
@@ -82,8 +82,9 @@
       });
    }
 
+   /* join함수 */
    function join(){
-      joinForm.submit();
+      joinForm.submit();	/* name이 joinForm인 데이터를 제출 */
    }
 
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div

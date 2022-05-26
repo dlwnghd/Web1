@@ -3,10 +3,18 @@
   <display-name>day02</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
     <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+  	<servlet-name>Calc</servlet-name>
+  	<jsp-file>/calc.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Calc</servlet-name>
+  	<url-pattern>/calc</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -26,7 +26,7 @@ public class MemberJoinOk implements Action{
 		memberVO.setMemberAddress(req.getParameter("memberAddress"));
 		memberVO.setMemberAddressDetail(req.getParameter("memberAddressDetail"));
 
-		memberDAO.join(memberVO);
+		memberDAO.join(memberVO); // memberVO에 담긴 값을 memberDAO 메소드로 전달
 		
 		req.setAttribute("memberName", memberVO.getMemberName());
 		
