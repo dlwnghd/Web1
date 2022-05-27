@@ -1,0 +1,18 @@
+JSTL(Jsp Standard Tag Library)
+	연산자, 조건문, 반복문 등을 편하게 처리할 수 있으며,
+	JSP페이지 내에서 자바코드를 사용하지 않고도 로직을 구현할 수 있도록
+	다양한 효율적인 방법을 제공한다.
+
+	자바				JSTL
+	for(자료형 변수명:반복자){}		<c:forEach var="" items="${반복자}"></c:forEach>
+	for(초기식;조건식;증감식;){}	<c:forEach var="" begin="${startPage}" end="${endPage}></c:forEach>
+
+
+core 태그의 종류 <c:></c:>
+	<c:set> : 변수 선언
+	<c:out> : 변수 출력
+	<c:if> : 조건식(if문)
+	<c:choose> : 조건(switch문의 시작)
+	<c:when> : case문
+	<c:otherwise> : default문
+	<c:forEach> : 반복문(for문)

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.jdt.ui.java"/>
-			<item value="org.eclipse.jpt.jaxb"/>
+			<item value="org.eclipse.wst.web.ui"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">
@@ -16,6 +15,9 @@
 	<section name="ZipFileImportWizard">
 		<item key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="true"/>
 		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="D:\Web_1900_ljh\jsp\memo\day09.zip"/>
+			<item value="D:\Web_1900_ljh\jsp\memo\day07.zip"/>
+			<item value="D:\Web_1900_ljh\jsp\memo\day07_회원목록_카멜표기법_언더바표기법_설정완료.zip"/>
 			<item value="D:\Web_1900_ljh\jsp\memo\day06.zip"/>
 			<item value="C:\Users\alion\OneDrive\바탕 화면\day06.zip"/>
 		</list>

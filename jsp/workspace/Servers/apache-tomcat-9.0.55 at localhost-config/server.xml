@@ -160,7 +160,7 @@
       
       
       
-      <Context docBase="day02" path="/day02" reloadable="true" source="org.eclipse.jst.jee.server:day02"/><Context docBase="day03" path="/day03" reloadable="true" source="org.eclipse.jst.jee.server:day03"/></Host>
+      </Host>
     </Engine>
   </Service>
 </Server>
