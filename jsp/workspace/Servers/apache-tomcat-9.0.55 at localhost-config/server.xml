@@ -160,7 +160,7 @@
       
       
       
-      </Host>
+      <Context docBase="day07" path="/day07" reloadable="true" source="org.eclipse.jst.jee.server:day07"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -28,7 +28,8 @@ public class MemberJoinOk implements Action{
 
 		memberDAO.join(memberVO); // memberVO에 담긴 값을 memberDAO 메소드로 전달
 		
-		req.setAttribute("memberName", memberVO.getMemberName());
+//		req.setAttribute("memberName", memberVO.getMemberName());
+		req.setAttribute("memberList", memberDAO.selectMembers());
 		
 		
 		actionInfo.setRedirect(false);	// true면 데이터가 다 날아가니 false로 지정

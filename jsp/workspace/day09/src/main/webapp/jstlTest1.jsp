@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h2>JSTL TEST(변수)</h2>
-	<c:set var="name" value="홍길동" scope="page/"/>
+	<c:set var="name" value="홍길동" scope="page"/>
 	<c:out value="${name}"/>
 </body>
 </html>

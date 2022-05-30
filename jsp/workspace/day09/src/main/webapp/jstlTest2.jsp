@@ -20,14 +20,14 @@
    
    <c:set var="id" value="member"/>
    <!-- 조건 확인 후 반복 탈출 -->
-   <c:choose>
-      <c:when test="${id == 'hds1234'}">
+   <c:choose> <!-- swtich문 -->
+      <c:when test="${id == 'hds1234'}">	<!-- case -->
          <h3><c:out value="${id}"/>님 환영합니다.</h3>
       </c:when>
-      <c:when test="${id eq 'admin'}">
+      <c:when test="${id eq 'admin'}">	<!-- case -->
          <h3>관리자님 환영합니다.</h3>
       </c:when>
-      <c:otherwise>
+      <c:otherwise>	<!-- 기본값 -->
          <h3>로그인 실패</h3>
       </c:otherwise>
    </c:choose>

@@ -1,5 +1,7 @@
 package com.member.domain.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -22,5 +24,10 @@ public class MemberDAO {
    //아이디 중복검사
    public boolean checkId(String memberId) {
       return (Integer)sqlSession.selectOne("Member.checkId", memberId) == 1;
+   }
+   
+   //회원 전체 목록
+   public List<MemberVO> selectMembers(){
+	   return sqlSession.selectList("Member.selectMembers");
    }
 }

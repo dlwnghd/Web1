@@ -14,4 +14,9 @@
       select count(member_id) from tbl_member where member_id = #{memberId}
    </select>
    
+   <!-- 회원목록 -->
+   <select id="selectMembers" resultType="memberVO">
+      select member_number, member_id, member_name, member_pw, member_gender, member_address, member_address_detail
+      from tbl_member
+   </select>
 </mapper>

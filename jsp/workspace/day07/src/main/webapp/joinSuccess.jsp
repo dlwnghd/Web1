@@ -8,7 +8,29 @@
 <title>회원가입 성공</title>
 </head>
 <body>
-	<!-- 파라미터 값을 가져옴 -->
-	<h1><c:out value="${memberName}"/>님 회원가입에 성공하셨습니다!</h1>
+	<table border="1" style="margin: 0 auto;">
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>아이디</th>
+			<th>비밀번호</th>
+			<th>성별</th>
+			<th>주소</th>
+			<th>상세주소</th>
+		</tr>
+		<c:forEach var="member" items="${memberList}">
+			<c:if test="${member.getMemberName() != '이주홍' }"> <!-- 이름이 이주홍이 아닌사람만 출력 -->
+			<tr>
+				<td><c:out value="${member.getMemberNumber()}"/></td>
+				<td><c:out value="${member.getMemberName()}"/></td>
+				<td><c:out value="${member.getMemberId()}"/></td>
+				<td><c:out value="${member.getMemberPw()}"/></td>
+				<td><c:out value="${member.getMemberGender()}"/></td>
+				<td><c:out value="${member.getMemberAddress()}"/></td>
+				<td><c:out value="${member.getMemberAddressDetail()}"/></td>
+			</tr>
+			</c:if>
+		</c:forEach>
+	</table>
 </body>
 </html>
