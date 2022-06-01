@@ -1,0 +1,7 @@
+/**
+ * 
+ */
+
+function send(){
+	loginForm.submit();
+}

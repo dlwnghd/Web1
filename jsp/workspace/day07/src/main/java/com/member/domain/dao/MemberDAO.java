@@ -1,5 +1,6 @@
 package com.member.domain.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -29,5 +30,10 @@ public class MemberDAO {
    //회원 전체 목록
    public List<MemberVO> selectMembers(){
 	   return sqlSession.selectList("Member.selectMembers");
+   }
+   
+   //로그인
+   public String login(HashMap<String, String> memberMap) {
+	   return sqlSession.selectOne("Member.login", memberMap);
    }
 }

@@ -9,4 +9,16 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
+  <!-- 서블릿 태그 추가 -->
+  <servlet>
+  	<servlet-name>MemberFrontController</servlet-name>
+  	<servlet-class>com.board.app.member.MemberFrontController</servlet-class>
+  </servlet>
+  
+  <!-- 서블릿 매핑 태그 추가-->
+  <servlet-mapping>
+  	<servlet-name>MemberFrontController</servlet-name>
+  	<url-pattern>*.me</url-pattern>
+  </servlet-mapping>
 </web-app>

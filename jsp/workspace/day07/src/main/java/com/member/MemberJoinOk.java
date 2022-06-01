@@ -1,6 +1,7 @@
 package com.member;
 
 import java.io.IOException;
+import java.util.Base64;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,18 +22,19 @@ public class MemberJoinOk implements Action{
 		
 		memberVO.setMemberId(req.getParameter("memberId"));
 		memberVO.setMemberName(req.getParameter("memberName"));
-		memberVO.setMemberPw(req.getParameter("memberPw"));
+//		⬇️암호화된 것을 집어 넣음
+		memberVO.setMemberPw(new String(Base64.getEncoder().encode(req.getParameter("memberPw").getBytes())));
 		memberVO.setMemberGender(req.getParameter("memberGender"));
 		memberVO.setMemberAddress(req.getParameter("memberAddress"));
 		memberVO.setMemberAddressDetail(req.getParameter("memberAddressDetail"));
 
-		memberDAO.join(memberVO); // memberVO에 담긴 값을 memberDAO 메소드로 전달
+		memberDAO.join(memberVO);
 		
 //		req.setAttribute("memberName", memberVO.getMemberName());
 		req.setAttribute("memberList", memberDAO.selectMembers());
+		System.out.println(memberDAO.selectMembers().get(0).getMemberName());
 		
-		
-		actionInfo.setRedirect(false);	// true면 데이터가 다 날아가니 false로 지정
+		actionInfo.setRedirect(false);
 		actionInfo.setPath("/joinSuccess.jsp");
 		
 		return actionInfo;

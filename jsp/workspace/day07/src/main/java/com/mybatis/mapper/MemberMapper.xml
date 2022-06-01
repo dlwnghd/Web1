@@ -19,4 +19,10 @@
       select member_number, member_id, member_name, member_pw, member_gender, member_address, member_address_detail
       from tbl_member
    </select>
+   
+   <!-- 로그인 -->
+   <select id="login" parameterType="map" resultType="_int">
+      select member_number from tbl_member
+      where meber_id = #{memberId} and member_pw = #{memberPw}
+   </select>
 </mapper>
