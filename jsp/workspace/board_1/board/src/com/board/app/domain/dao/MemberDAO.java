@@ -30,4 +30,10 @@ public class MemberDAO {
 	public int login(HashMap<String, String> loginMap) {
 		return sqlSession.selectOne("Member.login", loginMap);
 	}
+	
+	//회원 정보 조회
+	public MemberVO getInfo(int memberNumber) {
+		return sqlSession.selectOne("Member.getInfo", memberNumber);
+	}
+	
 }

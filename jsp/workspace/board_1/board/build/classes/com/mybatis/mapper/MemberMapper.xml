@@ -14,6 +14,11 @@
 	<select id="login" parameterType="map" resultType="_int">
 		select member_number from tbl_member where member_id = #{memberId} and member_pw = #{memberPw}
 	</select>
+	
+	<select id="getInfo" parameterType="_int" resultType="memberVO">
+		select member_id, member_pw, member_name, member_age, member_gender, member_email, member_zipcode, member_address, member_address_detail 
+		from tbl_member where member_number = #{memberNumber}
+	</select>
 </mapper>
 
 

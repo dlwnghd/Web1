@@ -19,18 +19,18 @@ public class MemberCheckIdOk implements Action {
 		req.setCharacterEncoding("UTF-8");
 		MemberDAO memberDAO = new MemberDAO();
 		PrintWriter out = resp.getWriter();
-		String memberId = req.getParameter("memberId");	//	외부에서 전달받은 Id를 파라미터로 받아옴
+		String memberId = req.getParameter("memberId");
 		JSONObject json = new JSONObject();
 		
-//		checkId가 true면 아이디가 중복이므로 fail처리
+		
 		if(memberDAO.checkId(memberId)) {
 			json.put("result", "fail");
 		}else {
 			json.put("result", "success");
 		}
 		
-		out.print(json.toJSONString());	//	해당 문자열을 출력
-		out.close();	//	버퍼 닫기
+		out.print(json.toJSONString());
+		out.close();
 		
 		return null;
 	}

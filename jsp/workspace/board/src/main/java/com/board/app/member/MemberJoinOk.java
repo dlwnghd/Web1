@@ -32,9 +32,9 @@ public class MemberJoinOk implements Action {
 		
 		memberDAO.insert(memberVO);
 		
-		actionInfo.setPath("/member/MemberLogin.me"); // 이 컨트롤러로 갔다가 
+		actionInfo.setPath("/member/MemberLogin.me");
 		actionInfo.setRedirect(false);
-		return actionInfo;	// MemberLogin으로 이동
+		return actionInfo;
 	}
 
 }

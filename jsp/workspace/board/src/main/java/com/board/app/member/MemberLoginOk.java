@@ -22,7 +22,7 @@ public class MemberLoginOk implements Action{
 		String memberPw = req.getParameter("memberPw");
 		String saveId = req.getParameter("saveId");
 		String autoLogin = req.getParameter("autoLogin");
-		int memberNumber = 0;
+		int memberNumber = 0;	// 초기화
 		
 		MemberDAO memberDAO = new MemberDAO();
 		
@@ -31,7 +31,7 @@ public class MemberLoginOk implements Action{
 		loginMap.put("memberId", memberId);
 		loginMap.put("memberPw", memberPw);
 		
-		memberNumber = memberDAO.login(loginMap);
+		memberNumber = memberDAO.login(loginMap);	// memberDAO의 login메소드에 loginMap을 전달
 		
 		//로그인 성공 시
 		if(memberNumber != 0) {
@@ -46,39 +46,42 @@ public class MemberLoginOk implements Action{
 				Cookie cookieSaveId = new Cookie("saveId", "saveId");
 				
 				//유통 기한을 1년으로 설정
-				cookieId.setMaxAge(60*60*24*365);
-				cookieSaveId.setMaxAge(60*60*24*365);
+				cookieId.setMaxAge(60*60*24*365);	// 60초 * 60분 * 24시간 * 365일
+				cookieSaveId.setMaxAge(60*60*24*365);	// 60초 * 60분 * 24시간 * 365일
 				
-				//응답 객체에 생성한 쿠키를 넣어준다.
-				resp.addCookie(cookieId);
-				resp.addCookie(cookieSaveId);
+				//응답(respose) 객체에 생성한 쿠키를 넣어준다.
+				resp.addCookie(cookieId);	// ID
+				resp.addCookie(cookieSaveId);	// SaveId
 				
 			}else {
-				//아이디 저장이 체크되지 않았을 경우
+				//아이디 저장 체크박스가 체크되지 않았을 경우
 				if(req.getHeader("Cookie") != null) {
 					//쿠키를 삭제해준다.
 					Cookie[] cookies =req.getCookies();
 					for(Cookie cookie : cookies) {
-						cookie.setMaxAge(0);
-						resp.addCookie(cookie);
+						cookie.setMaxAge(0);	// 쿠키 삭제 처리
+						resp.addCookie(cookie);	//응답 객체에 비어있는 cookie값을 넣어준다.
 					}
 				}
 			}
 			
 			//자동 로그인 체크 시
-			if(autoLogin != null) {
+			if(autoLogin != null) {	// 자동 로그인 체크박스가 체크 되어 있다면
 				//아이디, 비밀번호, 자동로그인 체크박스를 쿠키에 저장
 				Cookie cookieId = new Cookie("memberId", memberId);
 				Cookie cookiePw = new Cookie("memberPw", memberPw);
 				Cookie cookieAutoLogin = new Cookie("autoLogin", "autoLogin");
 				
-				cookieId.setMaxAge(60*60*24*365);
-				cookiePw.setMaxAge(60*60*24*365);
-				cookieAutoLogin.setMaxAge(60*60*24*365);
 				
-				resp.addCookie(cookieId);
-				resp.addCookie(cookiePw);
-				resp.addCookie(cookieAutoLogin);
+				//유통 기한을 1년으로 설정
+				cookieId.setMaxAge(60*60*24*365);	// 60초 * 60분 * 24시간 * 365일
+				cookiePw.setMaxAge(60*60*24*365);	// 60초 * 60분 * 24시간 * 365일
+				cookieAutoLogin.setMaxAge(60*60*24*365);	// 60초 * 60분 * 24시간 * 365일
+				
+				//응답(respose) 객체에 생성한 쿠키를 넣어준다.
+				resp.addCookie(cookieId);	// ID
+				resp.addCookie(cookiePw);	// PW
+				resp.addCookie(cookieAutoLogin);	// AutoLogin
 				
 			}else {
 				//자동 로그인 해제 시 기존 쿠키 삭제
@@ -88,12 +91,15 @@ public class MemberLoginOk implements Action{
 						cookie.setMaxAge(0);
 						resp.addCookie(cookie);
 					}
+					System.out.println("자동로그인 쿠키 삭제");
 				}
 			}
 			
+			// 로그인 성공 시 게시판으로 이동
 			actionInfo.setPath("/board/BoardListOk.bo");
 			
 		}else {
+			// 로그인 실패 시 로그인 페이지로 이동
 			actionInfo.setPath("/member/MemberLogin.me");
 		}
 		actionInfo.setRedirect(false);

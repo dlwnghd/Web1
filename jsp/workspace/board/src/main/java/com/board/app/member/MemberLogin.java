@@ -11,21 +11,21 @@ import com.board.app.action.ActionInfo;
 
 public class MemberLogin implements Action {
 
-	@Override
-	public ActionInfo execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		
-		ActionInfo actionInfo = new ActionInfo();
-		
-		//쿠키 존재여부 검사
-		String memberId = null;
-		String memberPw = null;
-		String saveId = null;
-		String autoLogin = null;
-		
-		String cookieCheck = req.getHeader("Cookie");
-		
-		
-		if(cookieCheck != null) {
+   @Override
+   public ActionInfo execute(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+      
+      ActionInfo actionInfo = new ActionInfo();
+      
+      //쿠키 검사
+      String memberId = null;
+      String memberPw = null;
+      String saveId = null;
+      String autoLogin = null;
+      
+      String cookieCheck = req.getHeader("Cookie");
+      
+      
+      if(cookieCheck != null) {	// 기존에 쿠키가 있는지 검사
 			Cookie[] cookies = req.getCookies();
 			for(Cookie cookie : cookies) {
 				if(cookie.getName().equals("memberId")) {	// cookie에 있는 name중에서 "memberId"라는 이름의 쿠키가 있다면
@@ -43,25 +43,25 @@ public class MemberLogin implements Action {
 				}
 			}
 		}
-		
-		req.setAttribute("memberId", memberId);
-		req.setAttribute("memberPw", memberPw);
-		req.setAttribute("saveId", saveId);
-		req.setAttribute("autoLogin", autoLogin);
-		
-		System.out.println(memberId);
-		System.out.println(memberPw);
-		System.out.println(saveId);
-		System.out.println(autoLogin);
-		
-		actionInfo.setPath("/app/member/login.jsp");
-		actionInfo.setRedirect(false);
-		
-		return actionInfo;
-	}
+      
+      req.setAttribute("memberId", memberId);
+      req.setAttribute("memberPw", memberPw);
+      req.setAttribute("saveId", saveId);
+      req.setAttribute("autoLogin", autoLogin);
+      
+      System.out.println(memberId);
+      System.out.println(memberPw);
+      System.out.println(saveId);
+      System.out.println(autoLogin);
+      
+      // login.jsp에서 위 객체들을 가지고 옴
+      actionInfo.setPath("/app/member/login.jsp");
+      actionInfo.setRedirect(false);
+      
+      return actionInfo;
+   }
 
 }
-
 
 
 

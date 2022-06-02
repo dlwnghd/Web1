@@ -34,9 +34,9 @@ public class MemberFrontController extends HttpServlet {
 		}else if(command.equals("/member/MemberJoinOk.me")) {
 			actionInfo = new MemberJoinOk().execute(req, resp);
 		}else if(command.equals("/member/MemberLogin.me")) {
-			actionInfo = new ActionInfo();
-			actionInfo.setPath("/app/member/login.jsp");
-			actionInfo.setRedirect(false);
+			actionInfo = new MemberLogin().execute(req, resp);
+		}else if(command.equals("/member/MemberLoginOk.me")) {
+			actionInfo = new MemberLoginOk().execute(req, resp);
 		}
 		
 		if(actionInfo != null) {

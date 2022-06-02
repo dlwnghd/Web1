@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+	<select id="selectAll" parameterType="map" resultType="boardDTO">
+		select board_number, board_title, board_content, member_id, board_date, read_count 
+		from tbl_board b join tbl_member m 
+		on b.member_number = m.member_number
+		order by 1 desc limit #{startRow}, #{rowCount}
+	</select>
+	
+	<!-- 게시글 전체 개수  -->
+	<select id="getTotal" resultType="_int">
+		select count(board_number) from tbl_board
+	</select>
+	
+	<!-- 게시글 상세보기(전체 정보 조회) -->
+	<select id="selectDetail" parameterType="_int" resultType="boardDTO">
+		select board_number, board_title, board_content, b.member_number, member_id 
+		from tbl_board b join tbl_member m
+		on  b.member_number = m.member_number and board_number = #{boardNumber}
+	</select>
+	
+	<!-- 조회수 -->
+	<update id="updateReadCount" parameterType="_int">
+		update tbl_board
+		set read_count = read_count + 1
+		where board_number = #{boardNumber}
+	</update>
+	
+	<!-- 최근 게시글 번호 -->
+	<select id="getSeq" resultType="_int">
+		select board_number from tbl_board
+		order by 1 desc limit 0, 1;
+	</select>
+	
+	<!-- 게시글 작성 -->
+	<insert id="insert" parameterType="boardVO">
+		insert into tbl_board (board_title, board_content, member_number, board_date) 
+		values(#{boardTitle}, #{boardContent}, #{memberNumber}, now())
+	</insert>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="delete" parameterType="_int">
+		delete from tbl_board where board_number = #{boardNumber}
+	</delete>
+	
+	<!-- 게시글 수정 -->
+	<update id="update" parameterType="boardVO">
+		update tbl_board
+		set board_title=#{boardTitle}, board_content=#{boardContent}
+		where board_number = #{boardNumber}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

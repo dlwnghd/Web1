@@ -147,50 +147,29 @@
 	<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/login.js"></script>
 	<script>
-		let memberId = "${memberId}";
-		let memberPw = "${memberPw}";
-		let saveId = "${saveId}";
-		let autoLogin = "${autoLogin}";
-		
-		//아이디 저장버튼이 이전에 눌러져 있었다면
-		if(saveId){
-			//다시 체크해주고
-			$("input#saveId").prop("checked", true);
-			//아이디를 저장했던 아이디로 작성해준다.
-			$("input[name='memberId']").val(memberId);
-		}
-		
-		//자동 로그인이 이전에 눌러져 있었다면
-		if(autoLogin){
-			//다시 체크해주고
-			$("input#autoLogin").prop("checked", true);
-			//아이디 입력
-			$("input[name='memberId']").val(memberId);
-			//비밀번호 입력
-			$("input[name='memberPw']").val(memberPw);
-			//전송
-			loginForm.submit();
-		}
-	</script>
+      let memberId = "${memberId}";
+      let memberPw = "${memberPw}";
+      let saveId = "${saveId}";
+      let autoLogin = "${autoLogin}";
+      
+      //아이디 저장버튼이 이전에 눌러져 있었다면
+      if(saveId){
+         //다시 체크해주고
+         $("input#saveId").prop("checked", true);
+         //아이디를 저장했던 아이디로 작성해준다.
+         $("input[name='memberId']").val(memberId);
+      }
+      
+      //자동 로그인이 이전에 눌러져 있었다면
+      if(autoLogin){
+         //다시 체크해주고
+         $("input#autoLogin").prop("checked", true);
+         //아이디 입력
+         $("input[name='memberId']").val(memberId);
+         //비밀번호 입력
+         $("input[name='memberPw']").val(memberPw);
+         //전송
+         loginForm.submit();
+      }
+   </script>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

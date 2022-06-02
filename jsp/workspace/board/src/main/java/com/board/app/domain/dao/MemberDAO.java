@@ -28,6 +28,6 @@ public class MemberDAO {
 	
 	//로그인
 	public int login(HashMap<String, String> loginMap) {
-		return sqlSession.selectOne("Member.login", loginMap);
+		return sqlSession.selectOne("Member.login", loginMap);	// Member.login 호출 / loginMap 전달
 	}
 }
