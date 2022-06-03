@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
+
 	<select id="selectAll" parameterType="map" resultType="boardDTO">
 		select board_number, board_title, board_content, member_id, board_date, read_count 
 		from tbl_board b join tbl_member m 
@@ -30,7 +31,7 @@
 	<!-- 최근 게시글 번호 -->
 	<select id="getSeq" resultType="_int">
 		select board_number from tbl_board
-		order by 1 desc limit 0, 1;
+		order by 1 desc limit 0, 1
 	</select>
 	
 	<!-- 게시글 작성 -->
@@ -50,6 +51,7 @@
 		set board_title=#{boardTitle}, board_content=#{boardContent}
 		where board_number = #{boardNumber}
 	</update>
+	
 </mapper>
 
 

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.board.app.action.Action;
 import com.board.app.action.ActionInfo;
 import com.board.app.domain.dao.BoardDAO;
+import com.board.app.domain.dao.FileDAO;
 
 public class BoardDetailOk implements Action {
 
@@ -18,11 +19,13 @@ public class BoardDetailOk implements Action {
 		int page = Integer.parseInt(req.getParameter("page"));
 		
 		BoardDAO boardDAO = new BoardDAO();
+		FileDAO fileDAO = new FileDAO();
 		ActionInfo actionInfo = new ActionInfo();
 		
 		//게시글 번호로 조회한 게시글의 전체 정보를 requestScope에 저장한다.
 		req.setAttribute("board", boardDAO.selectDetail(boardNumber));
 		req.setAttribute("page", page);
+		req.setAttribute("files", fileDAO.select(boardNumber));
 		
 		//상세보기로 왔다면, 조회수를 1 증가시켜준다.
 		boardDAO.updateReadCount(boardNumber);

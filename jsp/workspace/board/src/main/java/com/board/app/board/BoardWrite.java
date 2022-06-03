@@ -19,9 +19,10 @@ public class BoardWrite implements Action{
 		MemberDAO memberDAO = new MemberDAO();
 		ActionInfo actionInfo = new ActionInfo();
 		
-//		String memberId = memberDAO.getInfo((Integer)session.getAttribute("memberNumber")).getMemberId();
+		String memberId = memberDAO.getInfo((Integer)session.getAttribute("memberNumber")).getMemberId();
 		
-//		req.setAttribute("memberId", memberId);
+		req.setAttribute("memberId", memberId);
+		req.setAttribute("page", req.getParameter("page"));
 		
 		actionInfo.setRedirect(false);
 		actionInfo.setPath("/app/board/boardWrite.jsp");

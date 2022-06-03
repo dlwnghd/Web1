@@ -22,9 +22,9 @@ public class BoardListOk implements Action{
 		int total = boardDAO.getTotal();
 //		int total = bDao.getTotal();
 		//사용자가 요청한 페이지
-		String temp = req.getParameter("page");
+		String temp = req.getParameter("page");	// 현재 페이지를 가져옴
 		//사용자가 요청한 페이지가 null이면 1페이지를,
-		//null이 아니면 요청한 페이지를 page에 담아준다.
+		//null이 아니면 요청받은 페이지를 정수로 바꾸어 page에 담아준다.
 		int page = temp == null ? 1 : Integer.parseInt(temp);
 		//한 페이지에 출력되는 게시글의 개수
 		int rowCount = 10;
@@ -68,21 +68,3 @@ public class BoardListOk implements Action{
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -13,7 +13,7 @@ public class BoardDTO {
 	
 	public BoardDTO() {;}
 
-	public BoardDTO(BoardVO boardVO) {
+	public BoardDTO(BoardVO boardVO) {	// memberId를 제외한 나머지 생성자들을 생성자를 이용하여 전부 초기화
 		super();
 		this.memberNumber = boardVO.getMemberNumber();
 		this.boardNumber = boardVO.getBoardNumber();

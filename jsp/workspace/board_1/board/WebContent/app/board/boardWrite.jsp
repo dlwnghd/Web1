@@ -83,13 +83,48 @@
                               <li><input type="button" value="목록" class="primary" onclick="location.href = '${pageContext.request.contextPath}/board/BoardListOk.bo'"/></li>
                            </ul>
                         </div>
-                        <form action="${pageContext.request.contextPath}/board/BoardWriteOk.bo" name="writeForm" method="post">
+                        <form action="${pageContext.request.contextPath}/board/BoardWriteOk.bo" name="writeForm" method="post" enctype="multipart/form-data">
                            <header class="major">
                               <p>
                                  <input name="boardTitle" type="text" placeholder="제목 입력">
                               </p>
                               <p style="text-align:left; margin-bottom:1%; margin-top:-1.75em;">작성자 : ${memberId}</p>
                            </header>
+                           
+						   <hr style="margin-top:0;">
+                           <div style="margin-bottom:2%;">
+                              첨부파일
+                           </div>
+                           <div style="display:flex;">
+                              <div class="files">
+                                 <div>
+                                    <label for="board_file1" style="display:inline;">
+                                       <img id="board_file1Img" src="${pageContext.request.contextPath}/images/filePlus.png" width="110px" height="110px" style="display:inline;">
+                                    </label>
+                                 </div>
+                                 <input id="board_file1" name="board_file1" type="file">
+                                 <input type="button" onclick="cancelFile('board_file1')" value="첨부 삭제">
+                              </div>
+                              <div class="files">
+                                 <div>
+                                    <label for="board_file2" style="display:inline;">
+                                       <img id="board_file2Img" src="${pageContext.request.contextPath}/images/filePlus.png" width="110px" height="110px" style="display:inline;">
+                                    </label>
+                                 </div>
+                                 <input id="board_file2" name="board_file2" type="file">
+                                 <input type="button" onclick="cancelFile('board_file2')" value="첨부 삭제">
+                              </div>
+                              <div class="files">
+                                 <div>
+                                    <label for="board_file3" style="display:inline;">
+                                       <img id="board_file3Img" src="${pageContext.request.contextPath}/images/filePlus.png" width="110px" height="110px" style="display:inline;">
+                                    </label>
+                                 </div>
+                                 <input id="board_file3" name="board_file3" type="file">
+                                 <input type="button" onclick="cancelFile('board_file3')" value="첨부 삭제">
+                              </div>
+                           </div>
+                           
                            <div style="margin-top:3%;">
                               <textarea name="boardContent" placeholder="내용 작성" style="resize:none;" rows="30"></textarea>
                            </div>
@@ -166,22 +201,38 @@
          <script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
          <script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
          <script>
-            function send(){
-               if(!writeForm.boardTitle){
-                  alert("제목을 작성해주세요.");
-                  return;
-               }
-               
-               if(!writeForm.boardContent){
-                  alert("내용을 작성해주세요.");
-                  return;
-               }
-               
-               writeForm.submit();
-            }
+         	function send(){
+         		if(!writeForm.boardTitle){
+         			alert("제목을 작성해주세요.");
+         			return;
+         		}
+         		
+         		if(!writeForm.boardContent){
+         			alert("내용을 작성해주세요.");
+         			return;
+         		}
+         		
+         		writeForm.submit();
+         	}
+         	
+         	$(".files").change(function(e){
+         		let img = $(this).find("img");
+         		let reader = new FileReader();
+         		reader.readAsDataURL(e.target.files[0]);
+         		
+         		reader.onload = function(e){
+         			if(e.target.result.indexOf("image") != -1){
+         				img.attr("src", e.target.result);
+         			}else{
+         				img.attr("src", "${pageContext.request.contextPath}/images/no_image.png");
+         			}
+         		}
+         	})
+         	
          </script>
    </body>
 </html>
+
 
 
 

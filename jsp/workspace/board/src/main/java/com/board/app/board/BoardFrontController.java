@@ -49,6 +49,9 @@ public class BoardFrontController extends HttpServlet {
 		case "/board/BoardUpdateOk.bo":
 			actionInfo = new BoardUpdateOk().execute(req, resp);
 			break;
+		case "/board/FileDownloadOk.bo":
+			actionInfo = new FileDownloadOk().execute(req, resp);
+			break;
 		}
 		
 		//분기 별 결과를 actionInfo에 담았다면 여기로 내려온다.

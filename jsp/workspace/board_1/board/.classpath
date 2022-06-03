@@ -19,5 +19,6 @@
 	<classpathentry exported="true" kind="lib" path="D:/web_1900_hds/jsp/resource/mybatis-3.5.9/mybatis-3.5.9.jar"/>
 	<classpathentry exported="true" kind="lib" path="D:/web_1900_hds/java/resource/java-sdk v2.2/lib/json-simple-1.1.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="D:/web_1900_hds/dbms/mysql/resource/mysql-connector-java-8.0.28/mysql-connector-java-8.0.28.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/web_1900_hds/jsp/resource/cos-20.08/lib/cos.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

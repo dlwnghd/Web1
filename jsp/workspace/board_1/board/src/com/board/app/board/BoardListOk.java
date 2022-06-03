@@ -20,7 +20,6 @@ public class BoardListOk implements Action{
 
 		//전체 게시글 개수
 		int total = boardDAO.getTotal();
-//		int total = bDao.getTotal();
 		//사용자가 요청한 페이지
 		String temp = req.getParameter("page");
 		//사용자가 요청한 페이지가 null이면 1페이지를,
