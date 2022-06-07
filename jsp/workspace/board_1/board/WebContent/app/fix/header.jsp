@@ -13,8 +13,14 @@
 <!-- Nav -->
 <nav id="menu">
 	<ul class="actions stacked">
-		<li><a href="" class="button primary fit">회원가입</a></li>
-		<li><a href="" class="button fit">로그인</a></li>
-		<li><a href="" class="button fit">로그아웃</a></li>
+		<c:choose>
+			<c:when test="${memberNumber eq null}">
+				<li><a href="${pageContext.request.contextPath }/member/MemberJoin.me" class="button primary fit">회원가입</a></li>
+				<li><a href="${pageContext.request.contextPath }/member/MemberLogin.me" class="button fit">로그인</a></li>
+			</c:when>
+			<c:otherwise>
+				<li><a href="${pageContext.request.contextPath }/member/MemberLogout.me" class="button fit">로그아웃</a></li>
+			</c:otherwise>
+		</c:choose>
 	</ul>
 </nav>

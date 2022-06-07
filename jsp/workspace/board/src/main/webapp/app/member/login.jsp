@@ -72,7 +72,8 @@
 												<div class="col-12">
 													<ul class="actions" style="display:block; text-align:center; margin-top:9%">
 														<li><input type="button" value="로그인" class="primary" style="width:100%; font-size:1em;" onclick="send()"/></li>
-														<li><input type="button" value="회원가입" style="width:100%; font-size:1em;" onclick="location.href='${pageContext.request.contextPath}/member/MemberJoin.me'" /></li>
+														<%-- <li><input type="button" value="회원가입" style="width:100%; font-size:1em;" onclick="location.href='${pageContext.request.contextPath}/member/MemberJoin.me'" /></li> --%>
+														<li><input type="button" value="회원가입" style="width:100%; font-size:1em;" onclick="location.href='${pageContext.request.contextPath}/app/member/join.jsp'" /></li>
 													</ul>
 												</div>
 											</div>

@@ -29,4 +29,14 @@
   	<servlet-name>BoardFrontController</servlet-name>
   	<url-pattern>*.bo</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ReplyFrontController</servlet-name>
+  	<servlet-class>com.board.app.reply.ReplyFrontController</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  	<servlet-name>ReplyFrontController</servlet-name>
+  	<url-pattern>*.re</url-pattern>
+  </servlet-mapping>
 </web-app>

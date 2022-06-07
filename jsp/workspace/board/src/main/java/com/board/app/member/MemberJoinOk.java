@@ -21,7 +21,8 @@ public class MemberJoinOk implements Action {
 		MemberVO memberVO = new MemberVO();
 		
 		memberVO.setMemberId(req.getParameter("memberId"));
-		memberVO.setMemberPw(new String(Base64.getEncoder().encode(req.getParameter("memberPw").getBytes())));
+		memberVO.setMemberPw(req.getParameter("memberPw"));
+//		memberVO.setMemberPw(new String(Base64.getEncoder().encode(req.getParameter("memberPw").getBytes())));	// 암호화
 		memberVO.setMemberName(req.getParameter("memberName"));
 		memberVO.setMemberAge(Integer.parseInt(req.getParameter("memberAge")));
 		memberVO.setMemberGender(req.getParameter("memberGender"));

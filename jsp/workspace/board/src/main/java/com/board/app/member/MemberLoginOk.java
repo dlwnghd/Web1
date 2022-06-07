@@ -72,7 +72,6 @@ public class MemberLoginOk implements Action{
 				Cookie cookiePw = new Cookie("memberPw", memberPw);
 				Cookie cookieAutoLogin = new Cookie("autoLogin", "autoLogin");
 				
-				
 				//유통 기한을 1년으로 설정
 				cookieId.setMaxAge(60*60*24*365);	// 60초 * 60분 * 24시간 * 365일
 				cookiePw.setMaxAge(60*60*24*365);	// 60초 * 60분 * 24시간 * 365일

@@ -102,6 +102,18 @@
                         <!-- 내용 -->
                         <h3><pre>${board.getBoardContent()}</pre></h3>
                      </section>
+                     <section class="main accent2" style="padding:3%">
+                        <header class="major" style="text-align:left;">
+                           <h2>댓글</h2>
+                           <p>여러분의 소중한 댓글을 작성해주세요.</p>
+                        </header>
+                        <form method="post" action="#" class="combined" style="width:auto;">
+                           <textarea name="content" id="content" placeholder="비속어를 사용하지 말아주세요." class="invert" rows="5" style="border-radius:0; resize:none;"></textarea>
+                           <input id="register" type="button" class="primary" value="등록" onclick="insert()"/>
+                        </form>
+                        <form action="#" id="replies" class="combined" style="flex-direction:column; margin:0; display:contents;">
+                        </form>
+                     </section>
                   </div>
                </div>
 
@@ -164,9 +176,35 @@
 
       <!-- Scripts -->
          <script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+         <script>
+         	let contextPath = "${pageContext.request.contextPath}";
+         	let boardNumber = "${board.getBoardNumber()}";
+         	let memberNumber = "${memberNumber}";
+         </script>
          <script src="${pageContext.request.contextPath}/assets/js/browser.min.js"></script>
          <script src="${pageContext.request.contextPath}/assets/js/breakpoints.min.js"></script>
          <script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
          <script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+         <script src="${pageContext.request.contextPath}/assets/js/reply.js"></script>
    </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

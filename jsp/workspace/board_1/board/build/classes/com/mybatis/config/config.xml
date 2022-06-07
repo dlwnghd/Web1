@@ -10,6 +10,8 @@
 		<typeAlias type="com.board.app.domain.vo.MemberVO" alias="memberVO"/>
 		<typeAlias type="com.board.app.domain.vo.FileVO" alias="fileVO"/>
 		<typeAlias type="com.board.app.domain.vo.BoardVO" alias="boardVO"/>
+		<typeAlias type="com.board.app.domain.vo.ReplyVO" alias="replyVO"/>
+		<typeAlias type="com.board.app.domain.vo.ReplyDTO" alias="replyDTO"/>
 		<typeAlias type="com.board.app.domain.vo.BoardDTO" alias="boardDTO"/>
 	</typeAliases>
 
@@ -29,6 +31,7 @@
 		<mapper resource="com/mybatis/mapper/MemberMapper.xml"/>
 		<mapper resource="com/mybatis/mapper/BoardMapper.xml"/>
 		<mapper resource="com/mybatis/mapper/FileMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/ReplyMapper.xml"/>
 	</mappers>
 	
 </configuration>

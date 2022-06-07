@@ -37,6 +37,8 @@ public class MemberFrontController extends HttpServlet {
 			actionInfo = new MemberLogin().execute(req, resp);
 		}else if(command.equals("/member/MemberLoginOk.me")) {
 			actionInfo = new MemberLoginOk().execute(req, resp);
+		}else if(command.equals("/member/MemberLogout.me")) {
+			actionInfo = new MemberLogout().execute(req, resp);
 		}
 		
 		if(actionInfo != null) {
