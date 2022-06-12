@@ -10,6 +10,14 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <!-- 서블릿-->
+  <!-- 1. 서블릿 이름으로 FrontController를 name으로 연결해야한다 -->
+  <!-- 2. FrontController의 위치를 class로 추가한다 -->
+  
+  <!-- 서블릿 맵핑-->
+  <!-- 1. 서블릿 이름으로 FrontController를 name으로 연결해야한다 -->
+  <!-- 2. url-pattern을 *.XX 로 설정한다. ⭐⭐⭐⭐⭐jsp혹은 index.html로 나오지 않도록 한다. -->
+  
   <servlet>
   	<servlet-name>MemberFrontController</servlet-name>
   	<servlet-class>com.board.app.member.MemberFrontController</servlet-class>

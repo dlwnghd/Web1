@@ -3,6 +3,7 @@
  */
 
 let replyList;
+// 다른 수정을 못하도록 막기위한 체크
 let check = false;
 
 getList();
@@ -109,14 +110,18 @@ function update(index){
 //		contentType:text로 반드시 설정한다. 생략 가능!
 		data: {replyNumber: replyList[index].replyNumber, replyContent: $("#content" + index).val()},
 		success: function(){
-			getList();
-			check = false;
+			getList();	// 댓글이 수정이 되면 수정된 댓글을 다시 호출해줘야 수정된 모습으로 보인다.
+			check = false;	// 수정을 다시 하기 위해 check를 false로 변경
 		}
 	});
 }
 
 //댓글 삭제
 function remove(replyNumber){
+	if(check){
+		alert("이미 수정중인 댓글이 있습니다.");
+		return;
+	}
 	$.ajax({
 		url: contextPath + "/board/ReplyDeleteOk.re",
 		type: 'get',

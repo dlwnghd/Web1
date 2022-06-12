@@ -71,19 +71,19 @@ aTags.on('click', function(e){
 //아이디 중복검사
 let check = false;
 
-function checkId(memberId){	/* 사용자가 입력한 memberId를 전달받음 */
+function checkId(memberId){
 	console.log(memberId);
 	$.ajax({
 		url: contextPath + "/member/MemberCheckIdOk.me?memberId=" + memberId,
-		type: "get", /* get방식으로 정보를 보냄 */
-		dataType: "json", /* 전달받을 데이터 타입: json */
+		type: "get",
+		dataType: "json",
 		success: function(result){
 			const $result = $("span#result");
-			if(result.result == "success"){	/* 전달받은 데이터가 "success"라면 */
+			if(result.result == "success"){
 				$result.text("사용가능한 아이디입니다.");
 				$result.css("color", "blue");
-				check = true;	// 사용 가능한 아이디 확인용
-			}else{	/* 전달받은 데이터가 그 외라면 */
+				check = true;
+			}else{
 				$result.text("중복된 아이디입니다.");
 				$result.css("color", "red");
 				check = false;
@@ -92,21 +92,19 @@ function checkId(memberId){	/* 사용자가 입력한 memberId를 전달받음 *
 	});
 }
 
-/*사용자가 Id에 입력한 해당 값과 비교*/
-$("input#memberId").keyup(function(){ /* input태그에 Id가 memberId인 친구에게 keyup이벤트를 줌*/
-	checkId($(this).val()); /* 사용자가 입력한 값을 가져옴 */
+
+$("input#memberId").keyup(function(){
+	checkId($(this).val());
 })
 
-/* join.jsp에서 사용할 send() function */
+
 function send(){
 	
-	// check가 false라면 이미 존재하는 아이디이므로
 	if(!check){
 		alert("아이디를 다시 확인해주세요.");
 		return;
 	}
 
-	// "전체동의" 체크박스에 체크가 되어있지 않다면
 	if(!$all.is(":checked")){
 		alert("약관 동의가 필요합니다.");
 		return;

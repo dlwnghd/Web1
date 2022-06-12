@@ -16,4 +16,5 @@
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="com.board.app.domain.vo.MemberVO"/>
     <fullyQualifiedTypeName name="java.util.Base64"/>
+    <fullyQualifiedTypeName name="com.board.app.domain.vo.ReplyDTO"/>
 </qualifiedTypeNameHistroy>
