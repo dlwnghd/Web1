@@ -1,0 +1,14 @@
+[DI 실습]
+	dependency package
+	1. restaurant 클래스 선언
+	2. chef 클래스 선언
+	3. 의존 관계를 확립하고 생성자 주입 진행
+	4. 단위 테스트를 통해 객체 확인
+
+	qualifier package
+	1. restaurant 인터페이스 선언
+	2. steak 가격 선언(모든 레스토랑의 스테이크 가격은 기본값이 같다), sidebar 이용 여부 선언
+	3. outback 클래스 선언, restaurant 지정
+	4. vips 클래스 선언, restaurant 지정
+	5. vips가 default
+	6. 단위 테스트를 통해 객체 확인
