@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>ex01</artifactId>
+    <artifactId>ex02</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ex01</name>
+    <name>ex02</name>
     <description>MyBatis Practice</description>
     <properties>
         <java.version>11</java.version>

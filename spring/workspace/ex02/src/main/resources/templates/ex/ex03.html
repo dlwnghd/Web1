@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EX03</title>
+</head>
+<body>
+    <h1>EX04</h1>
+
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>성별</th>
+        </tr>
+        <tr>
+            <td th:text="${exampleVO.name}"></td>
+            <td th:text="${exampleVO.age}"></td>
+            <td th:text="${exampleVO.gender}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>

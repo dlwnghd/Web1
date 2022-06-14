@@ -1,4 +1,4 @@
-package com.example.ex01.myBatis;
+package com.example.ex02.myBatis;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
@@ -39,7 +39,6 @@ public class MyBatisConfigTests {
 //    }
 
     @Test
-    // sqlSession을 만들려면 sqlSessionFactory로 session을 찍어냄
     public void sqlSessionTest(){
         log.info("-------------------------------");
         log.info("sql session factory : " + sqlSessionFactory);

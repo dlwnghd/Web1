@@ -1,4 +1,4 @@
-package com.example.ex01.mapper;
+package com.example.ex02.mapper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @Slf4j
 public class TimeMapperTests {
     @Autowired
-    private TimeMapper timeMapper;  // 버그로 빨갛게 뜨는거임
+    private TimeMapper timeMapper;
 
     @Test
     public void getTimeTest(){

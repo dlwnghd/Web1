@@ -1,4 +1,4 @@
-package com.example.ex01.myBatis;
+package com.example.ex02.myBatis;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -14,17 +14,11 @@ import org.springframework.context.annotation.Configuration;
 import java.io.IOException;
 
 @Configuration //설정 관련 클래스에 작성한다.
-@MapperScan("com.example.ex01.mapper") //작성한 경로부터 하위 경로까지 모두 @Mapper를 스캔한다.
-@RequiredArgsConstructor    // 생성자 주입시 필요한 어노테이션
+@MapperScan("com.example.ex02.mapper") //작성한 경로부터 하위 경로까지 모두 @Mapper를 스캔한다.
+@RequiredArgsConstructor
 public class MyBatisConfig {
 //    커넥션 풀 및 MyBatis에 필요한 요소를 메모리에 할당 및 관리, xml과 java연동에 필요한 경로 관리
-    private final ApplicationContext applicationContext;    // 생성자 주입
-
-    /*
-    * 전체적인 흐름도
-    * Config -> HikariDataSource -> SQLSessionFactory
-    * */
-
+    private final ApplicationContext applicationContext;
 
 //    @Bean : 메소드의 리턴 객체를 스프링 컨테이너에 등록, 객체명은 메소드의 이름으로 자동 설정되며,
 //            직접 설정하고자 할 때에는 @Bean(name="객체명")으로 사용
@@ -34,24 +28,22 @@ public class MyBatisConfig {
         return new HikariConfig(); //properties파일에서 가져온 설정들과 필드가 매핑되어 자동으로 주입된다.
     }
 
-    // HikariDataSource를 return하는 메소드
-    @Bean   // Spring이 인식할 수 있도록 @Bean 등록
+    @Bean
     public HikariDataSource hikariDataSource(){
 //        DataSource 객체에 DBMS 정보 설정
         return new HikariDataSource(hikariConfig());
     }
 
-    // SQLSessionFactory를 return하는 메소드
     @Bean
     public SqlSessionFactory sqlSessionFactory() throws IOException {
 //        세션 팩토리 설정 객체
-        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();  // 팩토리에 필요한 설정을 해줌
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 //        DBMS 정보를 담고 있는 DataSource를 세션 팩토리 설정 객체에 전달
         sqlSessionFactoryBean.setDataSource(hikariDataSource());
 //        SQL 쿼리를 작성할 mapper.xml 경로 설정
-        sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath*:/mapper/*.xml"));  // spring에 등록된 모든 등록된 경로(classpath)에 xml로 끝나는 모든 파일
+        sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath*:/mapper/*.xml"));
         try {
-//            위에서 설정한 SqlSessionFactoryBean을 통해 세션 팩토리 생성
+//            위에서 설정한 세션 팩토리 빈을 통해 세션 팩토리 생성
             SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBean.getObject();
 //            팟홀(언더바) 표기법을 카멜 표기법으로 자동 변경 설정
             sqlSessionFactory.getConfiguration().setMapUnderscoreToCamelCase(true);
