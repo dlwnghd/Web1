@@ -15,7 +15,7 @@ public class Test2VO {
     //수학
     private Integer math;
     //총점
-    private Integer sum;
+    private Integer total;
     //평균
-    private Float avg;
+    private Double avg;
 }
