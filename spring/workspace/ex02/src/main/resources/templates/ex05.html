@@ -5,27 +5,28 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>EX07</title>
+    <title>EX05</title>
 </head>
 <body>
-<h1>EX07</h1>
+<h1>EX05</h1>
 
 <table border="1">
     <tr>
         <th>이름</th>
-        <th>나이</th>
-        <th>성별</th>
-        <th>키</th>
-        <th>몸무게</th>
+        <th>국어</th>
+        <th>영어</th>
+        <th>수학</th>
+        <th>총점</th>
+        <th>평균</th>
     </tr>
-    <tr>
-        <td th:text="${exampleVO.name}"></td>
-        <td th:text="${exampleVO.age}"></td>
-        <td th:text="${exampleVO.gender}"></td>
-        <td th:text="|${height}cm|"></td>
-        <td th:text="|${weight}kg|"></td>
+    <tr th:object="${vo}">
+        <td th:text="*{name}"></td>
+        <td th:text="*{kor}"></td>
+        <td th:text="*{eng}"></td>
+        <td th:text="*{math}"></td>
+        <td th:text="*{total} + '점'"></td>
+        <td th:text="|*{avg}점|"></td>
     </tr>
 </table>
-
 </body>
 </html>

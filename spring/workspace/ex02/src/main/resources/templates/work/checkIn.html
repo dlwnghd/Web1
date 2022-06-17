@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>check in</title>
+</head>
+<body>
+    <form action="" name="checkIn">
+        <div>
+            이름 <input type="text" name="name">
+        </div>
+        <div>
+            <input type="button" value="출근하기" id="getToWork">
+            <input type="button" value="퇴근하기" id="leaveWork">
+        </div>
+    </form>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    let form = document.checkIn;
+
+    $("#getToWork").on("click", function(){
+        $(form).attr("action", "/ex/getToWork");
+        form.submit();
+    });
+
+    $("#leaveWork").on("click", function(){
+        $(form).attr("action", "/ex/leaveWork");
+        form.submit();
+    });
+
+</script>
+</html>

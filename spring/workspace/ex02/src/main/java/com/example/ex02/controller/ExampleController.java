@@ -1,21 +1,15 @@
 package com.example.ex02.controller;
 
 import com.example.ex02.domain.vo.ExampleVO;
-import com.example.ex02.domain.vo.Test2VO;
+import com.example.ex02.domain.vo.StudentVO;
 import com.example.ex02.domain.vo.TestVO;
+import com.example.ex02.domain.vo.UserVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.lang.reflect.Method;
-import java.sql.Time;
-import java.util.Date;
+import java.util.Calendar;
 
 @Controller
 @RequestMapping("/ex/*")
@@ -39,7 +33,7 @@ public class ExampleController {
         log.info("---------------------------------");
     }
 
-//    이름, 국어, 영어, 수학 점수를 전달받은 뒤 각 요소를 화면에 출력한다.
+    //    이름, 국어, 영어, 수학 점수를 전달받은 뒤 각 요소를 화면에 출력한다.
     @GetMapping("ex04")
     public void ex04(TestVO testVO){
         log.info("--------------------------------------");
@@ -50,7 +44,7 @@ public class ExampleController {
     //    숙제
 //    화면에서 총점과 평균을 구하지 않고 컨트롤러에서 구한 뒤 화면에 결과를 전달한다.
     @GetMapping("ex05")
-    public String ex05(@ModelAttribute("vo") Test2VO studentVO/*, Model model*/){
+    public String ex05(@ModelAttribute("vo") StudentVO studentVO/*, Model model*/){
 //        Model
 //        화면으로 데이터를 전달할 수 있는 객체
 //        2개 이상의 데이터를 전달할 때 적합하고, 한 개의 데이터를 전달할 때에는
@@ -71,15 +65,16 @@ public class ExampleController {
     }
 
     @GetMapping("ex06")
-    public void ex06(ExampleVO exampleVO,@ModelAttribute("height") Double height){
+    public void ex06(ExampleVO exampleVO, @ModelAttribute("height") Double height){
         log.info("--------------------------------------");
         log.info(exampleVO.toString());
         log.info(String.valueOf(height));
         log.info("--------------------------------------");
     }
 
-//    ExampleVO에 있는 이름과 나이를 전달받고, 키와 몸무게 전부 화면에 출력
+    //    ExampleVO에 있는 이름과 나이를 전달받고, 키와 몸무게 전부 화면에 출력
     @GetMapping("ex07")
+//    @RequestParam : 전달받는 파라미터의 이름이 매개변수의 이름과 다를 때 직접 설정하는 방법
     public void ex07(ExampleVO exampleVO, Double height, @RequestParam("data") Double weight, Model model){
         log.info("--------------------------------------");
         log.info(exampleVO.toString());
@@ -96,20 +91,17 @@ public class ExampleController {
      *  아이디와 비밀번호를 입력받은 후 아이디가 admin일 경우 admin.html로 이동
      *  아이디가 user일 경우 user.html로 이동
      *
-     *  - login.html : 아이디와 비밀번호 입력 페이지 출력
+     *  - goLogin.html : 아이디와 비밀번호 입력 페이지 출력
      *  - admin.html : 관리자 페이지 출력
      *  - user.html : 일반 회원 페이지 출력
      * */
-    @GetMapping("login")
-    public void login(){
 
-    }
+    @GetMapping("goLogin")
+    public void goLogin(){}
 
-    @PostMapping("login")
-    public String login(String id, Model model){
-        model.addAttribute("id",id);
-        log.info(id);
-        if(id.equals("admin")){
+    @PostMapping("goLogin")
+    public String goLogin(UserVO userVO){
+        if(userVO.getId().equals("admin")){
             return "/ex/admin";
         }
         return "/ex/user";
@@ -128,27 +120,104 @@ public class ExampleController {
      *   - work.html
      *
      * */
-    @GetMapping("work")
-    public void work(){
+    @GetMapping("checkIn")
+    public String checkIn(){
+        return "/work/checkIn";
+    }
+
+    @GetMapping("/getToWork")
+    public String getToWork(@ModelAttribute("name") String name){
+        Calendar now = Calendar.getInstance();
+        int hour = now.get(Calendar.HOUR_OF_DAY);
+        int minute = now.get(Calendar.MINUTE);
+
+        boolean lateCondition = hour >= 9 && minute > 0;
+
+        return lateCondition ? "/work/late" : "/work/getToWork";
+    }
+
+    @GetMapping("/leaveWork")
+    public String leaveWork(@ModelAttribute("name") String name){
+        Calendar now = Calendar.getInstance();
+        int hour = now.get(Calendar.HOUR_OF_DAY);
+        int minute = now.get(Calendar.MINUTE);
+
+        boolean leaveWorkCondition = hour >= 17 && minute >= 0;
+
+        return leaveWorkCondition ? "/work/leaveWork" : "/work/work";
+    }
+
+
+    @GetMapping("test")
+    public void test(){
 
     }
 
-    @PostMapping("work")
-    public String work(String time, String getToWork, String leave , Model model){
-        model.addAttribute("time",time);
-        model.addAttribute("getToWork",getToWork);
-        model.addAttribute("leave",leave);
-        log.info(time);
-        log.info(getToWork);
-        log.info(leave);
-//        Integer.parseInt(time);
-//        Integer.parseInt(getToWork);
-//        Integer.parseInt(leave);
-        if(Integer.parseInt(time)<Integer.parseInt(getToWork)){
-            return "/ex/getToWork";
-        }else if(Integer.parseInt(time) > Integer.parseInt(getToWork) && Integer.parseInt(time) < Integer.parseInt(leave)){
-            return "/ex/late";
+    @PostMapping("test")
+    public String test(String name, Model model){
+        model.addAttribute("name", name);
+        return "result";
+    }
+
+//    실습
+
+    //    아이디 : apple
+//    비밀번호 : banana
+//    로그인 성공 시 apple님 환영합니다.
+//    로그인 실패 시 로그인 실패
+    @GetMapping("login")
+    public String login(){
+        return "/login/login";
+    }
+
+    @PostMapping("login")
+    public String login(UserVO userVO, Model model){
+        if(userVO.getId().equals("apple")){
+            if(userVO.getPw().equals("banana")){
+                model.addAttribute("id", userVO.getId());
+                return "/login/success";
+            }
         }
-        return "/ex/leaveWork";
+        return "/login/fail";
     }
+
+
+    //    노래방 기계 제작
+//    사용자의 점수에 따른 알맞는 메세지 출력
+    @GetMapping("/songbox")
+    public String songbox(){
+        return "/songbox/songbox";
+    }
+
+    @PostMapping("/songbox")
+    public String checkScore(Integer score, Model model){
+        if(score < 50){
+            model.addAttribute("result", "연습이 부족해요!");
+            return "/songbox/result";
+        }
+
+        model.addAttribute("result", "훌륭해요!");
+        return "/songbox/result";
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
